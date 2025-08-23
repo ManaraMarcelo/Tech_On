@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* TechON Tour Virtual Design System */
 
 @layer base {
   :root {
@@ -17,8 +15,11 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* TechON Brand Colors */
+    --primary: 221 100% 64%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dark: 221 88% 52%;
+    --primary-light: 221 100% 85%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -34,9 +35,23 @@ All colors MUST be HSL.
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 221 100% 64%;
 
     --radius: 0.5rem;
+
+    /* TechON Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-dark)));
+    --gradient-hero: linear-gradient(135deg, hsl(221 100% 64%), hsl(221 88% 45%));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(210 40% 98%));
+
+    /* TechON Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    --shadow-button: 0 4px 12px -2px hsl(var(--primary) / 0.25);
+
+    /* Footer colors */
+    --footer-bg: 220 30% 15%;
+    --footer-text: 0 0% 85%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +116,28 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .section-gradient {
+    background: var(--gradient-subtle);
+  }
+  
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .button-shadow {
+    box-shadow: var(--shadow-button);
+  }
+  
+  .footer-bg {
+    background: hsl(var(--footer-bg));
+    color: hsl(var(--footer-text));
   }
 }
