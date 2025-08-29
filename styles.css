@@ -238,6 +238,80 @@ body {
     padding: 4rem 0;
 }
 
+/* Story Content */
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.story-title {
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+}
+
+.story-description {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.story-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4285f4;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.story-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.story-placeholder {
+    width: 300px;
+    height: 300px;
+    background: #f8f9fa;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #6b7280;
+}
+
+.story-placeholder svg {
+    margin-bottom: 1rem;
+    opacity: 0.6;
+}
+
+.placeholder-text {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
 .section-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -564,6 +638,614 @@ body {
     resize: vertical;
 }
 
+/* Additional Styles for All Pages */
+
+/* Services Detail Pages */
+.services-detailed {
+    padding: 4rem 0;
+}
+
+.service-detail {
+    margin-bottom: 4rem;
+}
+
+.service-detail.reverse .service-detail-content {
+    flex-direction: row-reverse;
+}
+
+.service-detail-content {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.service-detail-text, .service-detail-image {
+    flex: 1;
+}
+
+.service-icon-large {
+    color: #4285f4;
+    margin-bottom: 1.5rem;
+}
+
+.service-detail-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.service-detail-description {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.service-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.service-features li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #6b7280;
+}
+
+.service-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #4285f4;
+    font-weight: bold;
+}
+
+.service-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.price-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.price-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4285f4;
+}
+
+.service-placeholder {
+    width: 100%;
+    height: 250px;
+    background: #f8f9fa;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #6b7280;
+}
+
+/* Portfolio Full Page */
+.portfolio-filter {
+    padding: 2rem 0;
+    background: #f8f9fa;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid #e5e7eb;
+    background: white;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: #4285f4;
+    color: white;
+    border-color: #4285f4;
+}
+
+.portfolio-grid-full {
+    display: grid;
+    gap: 3rem;
+}
+
+.portfolio-item-full {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.portfolio-item-full:nth-child(even) {
+    direction: rtl;
+}
+
+.portfolio-item-full:nth-child(even) .portfolio-info {
+    direction: ltr;
+}
+
+.portfolio-image-full {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-placeholder-full {
+    width: 100%;
+    height: 300px;
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #6b7280;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(66, 133, 244, 0.9);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.portfolio-image-full:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-overlay-content {
+    text-align: center;
+}
+
+.portfolio-overlay-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.portfolio-overlay-content p {
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.portfolio-info {
+    padding: 2rem;
+}
+
+.portfolio-category {
+    display: inline-block;
+    background: #e1f5fe;
+    color: #4285f4;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.portfolio-title-full {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.portfolio-description-full {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.portfolio-specs {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.spec {
+    background: #f8f9fa;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* Contact Page Specific */
+.contact-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+}
+
+.contact-item-large {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: #e1f5fe;
+    color: #4285f4;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-details h4 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+.contact-details p {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+.whatsapp-card {
+    background: #25d366;
+    color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.whatsapp-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp-content h4 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.btn-whatsapp {
+    background: white;
+    color: #25d366;
+    border: none;
+    margin-top: 1rem;
+}
+
+.btn-whatsapp:hover {
+    background: #f8f9fa;
+}
+
+.map-section {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.map-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+}
+
+.map-container {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.map-placeholder {
+    height: 400px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    text-align: center;
+}
+
+.map-placeholder svg {
+    margin-bottom: 1rem;
+    opacity: 0.6;
+}
+
+.faq-section {
+    padding: 4rem 0;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.faq-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.faq-question {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.faq-answer {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.form-checkbox {
+    margin: 0;
+    margin-top: 0.25rem;
+}
+
+.checkbox-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+/* About Page Specific */
+.mvv-section {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.mvv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.mvv-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.mvv-icon {
+    color: #4285f4;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.mvv-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.mvv-description {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+.team-section {
+    padding: 4rem 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.team-member {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.member-photo {
+    margin-bottom: 1.5rem;
+}
+
+.member-placeholder {
+    width: 120px;
+    height: 120px;
+    background: #f8f9fa;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+}
+
+.member-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+.member-role {
+    color: #4285f4;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.member-description {
+    color: #6b7280;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.technology-section {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.tech-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.tech-title {
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+}
+
+.tech-description {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.tech-list {
+    list-style: none;
+}
+
+.tech-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #6b7280;
+}
+
+.tech-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #4285f4;
+    font-weight: bold;
+}
+
+.tech-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tech-placeholder {
+    width: 300px;
+    height: 300px;
+    background: white;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #6b7280;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.tech-placeholder svg {
+    margin-bottom: 1rem;
+    opacity: 0.6;
+}
+
+.stats-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #4285f4, #3367d6);
+    color: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Hero Section for Homepage */
+.hero-text {
+    flex: 1;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
@@ -593,5 +1275,35 @@ body {
     
     .page-title {
         font-size: 2rem;
+    }
+    
+    .story-content, .service-detail-content, .tech-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .story-stats {
+        justify-content: center;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .portfolio-item-full {
+        grid-template-columns: 1fr;
+    }
+    
+    .portfolio-item-full:nth-child(even) {
+        direction: ltr;
+    }
+    
+    .filter-buttons {
+        justify-content: center;
+    }
+    
+    .whatsapp-card {
+        flex-direction: column;
+        text-align: center;
     }
 }
