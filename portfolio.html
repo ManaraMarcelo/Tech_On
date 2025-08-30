@@ -4,258 +4,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio - TechON Tour Virtual</title>
-    <meta name="description" content="Confira nosso portfólio com projetos de tours virtuais 360° para apartamentos, casas, restaurantes, lojas e espaços comerciais.">
+    <meta name="description" content="Explore nosso portfólio de tours virtuais 360°, fotografia imobiliária e projetos Matterport 3D para diversos setores.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
-        <nav class="nav-container">
-            <div class="nav-content">
-                <!-- Logo -->
-                <a href="index.html" class="logo-link">
-                    <div class="logo">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2">
+            <div class="container">
+                <a href="index.html" class="logo-link d-flex align-items-center me-3">
+                    <div class="logo me-2">
                         <div class="logo-inner">
                             <div class="logo-center"></div>
                         </div>
                     </div>
                     <span class="logo-text">TechON</span>
                 </a>
-
-                <!-- Navigation -->
-                <div class="nav-menu">
-                    <a href="index.html" class="nav-link">Início</a>
-                    <a href="servicos.html" class="nav-link">Serviços</a>
-                    <a href="portfolio.html" class="nav-link active">Portfólio</a>
-                    <a href="sobre.html" class="nav-link">Sobre Nós</a>
-                    <a href="contato.html" class="nav-link">Contato</a>
-                </div>
-
-                <!-- Mobile menu button -->
-                <div class="mobile-menu-btn">
-                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="index.html" class="nav-link text-muted">Início</a></li>
+                        <li class="nav-item"><a href="servicos.html" class="nav-link text-muted">Serviços</a></li>
+                        <li class="nav-item"><a href="portfolio.html" class="nav-link text-primary fw-bold">Portfólio</a></li>
+                        <li class="nav-item"><a href="sobre.html" class="nav-link text-muted">Sobre Nós</a></li>
+                        <li class="nav-item"><a href="contato.html" class="btn btn-primary ms-lg-3 mt-2 mt-lg-0">Contato</a></li>
+                    </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- Main content -->
     <main>
-        <!-- Page Header -->
-        <section class="page-header">
+        <section class="bg-light py-5 text-center">
             <div class="container">
-                <h1 class="page-title">Nosso Portfólio</h1>
-                <p class="page-subtitle">Conheça alguns dos nossos projetos mais recentes e descubra a qualidade do nosso trabalho</p>
+                <h1 class="display-4 fw-bold">Nosso Portfólio</h1>
+                <p class="lead text-muted">Uma galeria dos nossos melhores trabalhos em tours virtuais e fotografia imersiva.</p>
             </div>
         </section>
 
-        <!-- Portfolio Filter -->
-        <section class="portfolio-filter">
+        <section class="py-5">
             <div class="container">
-                <div class="filter-buttons">
-                    <button class="filter-btn active">Todos</button>
-                    <button class="filter-btn">Residencial</button>
-                    <button class="filter-btn">Comercial</button>
-                    <button class="filter-btn">Restaurantes</button>
-                    <button class="filter-btn">Hotéis</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Portfolio Grid -->
-        <section class="portfolio-section">
-            <div class="container">
-                <div class="portfolio-grid-full">
-                    <!-- Portfolio Item 1 -->
-                    <div class="portfolio-item-full">
-                        <div class="portfolio-image-full">
-                            <div class="portfolio-placeholder-full">
-                                <svg width="80" height="80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                                </svg>
-                            </div>
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-overlay-content">
-                                    <h3>Apartamento Luxo Morumbi</h3>
-                                    <p>Tour Virtual 360° • Residencial</p>
-                                    <button class="btn btn-white btn-sm">Ver Tour</button>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0 overflow-hidden">
+                            <div class="position-relative">
+                                <img src="http://googleusercontent.com/modern-luxury-apartment-living-room/0" class="card-img-top" alt="Apartamento Luxo Morumbi" style="height: 250px; object-fit: cover;">
+                                <div class="card-img-overlay d-flex align-items-center justify-content-center bg-primary bg-opacity-75 opacity-0 hover-opacity-100 transition-opacity">
+                                    <h5 class="card-title text-white fw-bold">Ver Projeto</h5>
                                 </div>
                             </div>
-                        </div>
-                        <div class="portfolio-info">
-                            <div class="portfolio-category">Residencial</div>
-                            <h3 class="portfolio-title-full">Apartamento Luxo Morumbi</h3>
-                            <p class="portfolio-description-full">
-                                Apartamento de alto padrão com 180m² no Morumbi. Tour completo com todos os ambientes, 
-                                incluindo varanda gourmet com vista panorâmica da cidade.
-                            </p>
-                            <div class="portfolio-specs">
-                                <span class="spec">180m²</span>
-                                <span class="spec">4 Quartos</span>
-                                <span class="spec">3 Suítes</span>
-                                <span class="spec">Vista Panorâmica</span>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Apartamento Luxo - Morumbi</h5>
+                                <p class="card-text text-muted small">Tour virtual 360° e fotografia HDR de um apartamento de alto padrão em São Paulo.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="badge bg-primary-subtle text-primary">Imobiliário</span>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Ver Detalhes</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Portfolio Item 2 -->
-                    <div class="portfolio-item-full">
-                        <div class="portfolio-image-full">
-                            <div class="portfolio-placeholder-full">
-                                <svg width="80" height="80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                </svg>
-                            </div>
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-overlay-content">
-                                    <h3>Restaurante Bella Vista</h3>
-                                    <p>Tour Virtual 360° • Restaurante</p>
-                                    <button class="btn btn-white btn-sm">Ver Tour</button>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0 overflow-hidden">
+                            <div class="position-relative">
+                                <img src="http://googleusercontent.com/cozy-italian-restaurant-interior-with-warm-lighting/0" class="card-img-top" alt="Restaurante Italiano Aconchegante" style="height: 250px; object-fit: cover;">
+                                <div class="card-img-overlay d-flex align-items-center justify-content-center bg-primary bg-opacity-75 opacity-0 hover-opacity-100 transition-opacity">
+                                    <h5 class="card-title text-white fw-bold">Ver Projeto</h5>
                                 </div>
                             </div>
-                        </div>
-                        <div class="portfolio-info">
-                            <div class="portfolio-category">Restaurante</div>
-                            <h3 class="portfolio-title-full">Restaurante Bella Vista</h3>
-                            <p class="portfolio-description-full">
-                                Restaurante italiano tradicional com ambiente aconchegante. Tour virtual destacando 
-                                a decoração única, salão principal e área VIP para eventos especiais.
-                            </p>
-                            <div class="portfolio-specs">
-                                <span class="spec">200m²</span>
-                                <span class="spec">80 Lugares</span>
-                                <span class="spec">Área VIP</span>
-                                <span class="spec">Jardim Interno</span>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Restaurante Sapore di Italia</h5>
+                                <p class="card-text text-muted small">Tour virtual e vídeo promocional para destacar o ambiente e a culinária autêntica.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="badge bg-success-subtle text-success">Comercial</span>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Ver Detalhes</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Portfolio Item 3 -->
-                    <div class="portfolio-item-full">
-                        <div class="portfolio-image-full">
-                            <div class="portfolio-placeholder-full">
-                                <svg width="80" height="80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                                </svg>
-                            </div>
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-overlay-content">
-                                    <h3>Loja Conceito Fashion</h3>
-                                    <p>Tour Virtual 360° • Comercial</p>
-                                    <button class="btn btn-white btn-sm">Ver Tour</button>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0 overflow-hidden">
+                            <div class="position-relative">
+                                <img src="http://googleusercontent.com/modern-dental-clinic-reception-area/0" class="card-img-top" alt="Clínica Odontológica Moderna" style="height: 250px; object-fit: cover;">
+                                <div class="card-img-overlay d-flex align-items-center justify-content-center bg-primary bg-opacity-75 opacity-0 hover-opacity-100 transition-opacity">
+                                    <h5 class="card-title text-white fw-bold">Ver Projeto</h5>
                                 </div>
                             </div>
-                        </div>
-                        <div class="portfolio-info">
-                            <div class="portfolio-category">Comercial</div>
-                            <h3 class="portfolio-title-full">Loja Conceito Fashion</h3>
-                            <p class="portfolio-description-full">
-                                Loja de moda contemporânea com design moderno e inovador. Tour virtual interativo 
-                                permitindo visualização completa dos produtos e layout diferenciado.
-                            </p>
-                            <div class="portfolio-specs">
-                                <span class="spec">120m²</span>
-                                <span class="spec">Design Moderno</span>
-                                <span class="spec">Provadores</span>
-                                <span class="spec">Área VIP</span>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Clínica Odontológica Sorriso Perfeito</h5>
+                                <p class="card-text text-muted small">Tour virtual 3D Matterport para explorar cada detalhe da clínica.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="badge bg-info-subtle text-info">Saúde</span>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Ver Detalhes</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Portfolio Item 4 -->
-                    <div class="portfolio-item-full">
-                        <div class="portfolio-image-full">
-                            <div class="portfolio-placeholder-full">
-                                <svg width="80" height="80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                                </svg>
-                            </div>
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-overlay-content">
-                                    <h3>Casa Alto Padrão Alphaville</h3>
-                                    <p>Tour Virtual 360° • Residencial</p>
-                                    <button class="btn btn-white btn-sm">Ver Tour</button>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0 overflow-hidden">
+                            <div class="position-relative">
+                                <img src="http://googleusercontent.com/stylish-clothing-boutique-interior/0" class="card-img-top" alt="Loja de Roupas Elegante" style="height: 250px; object-fit: cover;">
+                                <div class="card-img-overlay d-flex align-items-center justify-content-center bg-primary bg-opacity-75 opacity-0 hover-opacity-100 transition-opacity">
+                                    <h5 class="card-title text-white fw-bold">Ver Projeto</h5>
                                 </div>
                             </div>
-                        </div>
-                        <div class="portfolio-info">
-                            <div class="portfolio-category">Residencial</div>
-                            <h3 class="portfolio-title-full">Casa Alto Padrão Alphaville</h3>
-                            <p class="portfolio-description-full">
-                                Casa de luxo em condomínio fechado com 400m² de área construída. Tour completo 
-                                incluindo área de lazer, piscina, jardim e todos os ambientes internos.
-                            </p>
-                            <div class="portfolio-specs">
-                                <span class="spec">400m²</span>
-                                <span class="spec">5 Quartos</span>
-                                <span class="spec">Piscina</span>
-                                <span class="spec">Jardim</span>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Boutique Glamour Fashion</h5>
+                                <p class="card-text text-muted small">Tours virtuais para vitrines e interiores, destacando a coleção atual.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="badge bg-warning-subtle text-warning">Varejo</span>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Ver Detalhes</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Portfolio Item 5 -->
-                    <div class="portfolio-item-full">
-                        <div class="portfolio-image-full">
-                            <div class="portfolio-placeholder-full">
-                                <svg width="80" height="80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>
-                                </svg>
-                            </div>
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-overlay-content">
-                                    <h3>Hotel Boutique Centro</h3>
-                                    <p>Tour Virtual 360° • Hotel</p>
-                                    <button class="btn btn-white btn-sm">Ver Tour</button>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0 overflow-hidden">
+                            <div class="position-relative">
+                                <img src="http://googleusercontent.com/large-modern-event-space/0" class="card-img-top" alt="Espaço de Eventos Moderno" style="height: 250px; object-fit: cover;">
+                                <div class="card-img-overlay d-flex align-items-center justify-content-center bg-primary bg-opacity-75 opacity-0 hover-opacity-100 transition-opacity">
+                                    <h5 class="card-title text-white fw-bold">Ver Projeto</h5>
                                 </div>
                             </div>
-                        </div>
-                        <div class="portfolio-info">
-                            <div class="portfolio-category">Hotel</div>
-                            <h3 class="portfolio-title-full">Hotel Boutique Centro</h3>
-                            <p class="portfolio-description-full">
-                                Hotel boutique no centro da cidade com design contemporâneo. Tour virtual dos 
-                                quartos, lobby, restaurante e áreas comuns para reservas online.
-                            </p>
-                            <div class="portfolio-specs">
-                                <span class="spec">30 Quartos</span>
-                                <span class="spec">Restaurante</span>
-                                <span class="spec">Lobby Premium</span>
-                                <span class="spec">Centro</span>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Centro de Eventos Maximus</h5>
+                                <p class="card-text text-muted small">Tour virtual 360° para mostrar a versatilidade dos salões e áreas externas.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="badge bg-danger-subtle text-danger">Eventos</span>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Ver Detalhes</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Portfolio Item 6 -->
-                    <div class="portfolio-item-full">
-                        <div class="portfolio-image-full">
-                            <div class="portfolio-placeholder-full">
-                                <svg width="80" height="80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                                </svg>
-                            </div>
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-overlay-content">
-                                    <h3>Escritório Corporativo</h3>
-                                    <p>Tour Virtual 360° • Comercial</p>
-                                    <button class="btn btn-white btn-sm">Ver Tour</button>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0 overflow-hidden">
+                            <div class="position-relative">
+                                <img src="http://googleusercontent.com/luxurious-hotel-lobby/0" class="card-img-top" alt="Lobby de Hotel Luxuoso" style="height: 250px; object-fit: cover;">
+                                <div class="card-img-overlay d-flex align-items-center justify-content-center bg-primary bg-opacity-75 opacity-0 hover-opacity-100 transition-opacity">
+                                    <h5 class="card-title text-white fw-bold">Ver Projeto</h5>
                                 </div>
                             </div>
-                        </div>
-                        <div class="portfolio-info">
-                            <div class="portfolio-category">Comercial</div>
-                            <h3 class="portfolio-title-full">Escritório Corporativo</h3>
-                            <p class="portfolio-description-full">
-                                Escritório moderno em prédio comercial de alto padrão. Tour virtual completo 
-                                das salas, áreas de reunião, copa e recepção para locação corporativa.
-                            </p>
-                            <div class="portfolio-specs">
-                                <span class="spec">300m²</span>
-                                <span class="spec">8 Salas</span>
-                                <span class="spec">2 Reuniões</span>
-                                <span class="spec">Vista Cidade</span>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Hotel Paradiso</h5>
+                                <p class="card-text text-muted small">Tours virtuais de quartos, suítes, lobby, restaurante e piscinas do hotel.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="badge bg-dark-subtle text-dark">Hotelaria</span>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Ver Detalhes</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -263,117 +162,75 @@
             </div>
         </section>
 
-        <!-- Stats Section -->
-        <section class="stats-section">
+        <section class="py-5 text-center text-white" style="background: linear-gradient(135deg, #4285f4, #3367d6);">
             <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number">200+</div>
-                        <div class="stat-label">Projetos Concluídos</div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="fw-bold mb-3">Seu Projeto Merece Destaque</h2>
+                        <p class="lead mb-4">
+                            Queremos ajudar você a apresentar seu espaço de forma impactante. Fale conosco para criar o seu próprio tour virtual.
+                        </p>
+                        <a href="contato.html" class="btn btn-light btn-lg">Solicitar Orçamento</a>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">150+</div>
-                        <div class="stat-label">Clientes Satisfeitos</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">50K+</div>
-                        <div class="stat-label">Visualizações</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">98%</div>
-                        <div class="stat-label">Taxa de Satisfação</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact CTA -->
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-content">
-                    <h2 class="cta-title">Gostou do Nosso Trabalho?</h2>
-                    <p class="cta-description">Entre em contato e vamos criar um tour virtual incrível para o seu espaço também!</p>
-                    <a href="contato.html" class="btn btn-white">Iniciar Projeto</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-grid">
-                <!-- Company Info -->
-                <div class="footer-column">
-                    <div class="footer-logo">
-                        <div class="footer-logo-icon">
-                            <div class="footer-logo-inner">
-                                <div class="footer-logo-center"></div>
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <a href="index.html" class="logo-link d-flex align-items-center mb-3 text-white text-decoration-none">
+                        <div class="logo me-2">
+                            <div class="logo-inner">
+                                <div class="logo-center"></div>
                             </div>
                         </div>
-                        <span class="footer-logo-text">TechON</span>
-                    </div>
-                    <p class="footer-description">
-                        Transformamos espaços físicos em experiências virtuais imersivas desde 2020, 
-                        utilizando tecnologia de ponta e qualidade superior.
-                    </p>
+                        <span class="logo-text text-white">TechON</span>
+                    </a>
+                    <p class="small text-white-50">Transformamos espaços físicos em experiências virtuais imersivas, utilizando tecnologia de ponta e qualidade superior.</p>
                 </div>
-
-                <!-- Navigation Links -->
-                <div class="footer-column">
-                    <h3 class="footer-title">Links Rápidos</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Início</a></li>
-                        <li><a href="servicos.html">Serviços</a></li>
-                        <li><a href="portfolio.html">Portfólio</a></li>
-                        <li><a href="sobre.html">Sobre Nós</a></li>
-                        <li><a href="contato.html">Contato</a></li>
+                
+                <div class="col-md-2 col-6 mb-4">
+                    <h5 class="text-white">Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none">Início</a></li>
+                        <li><a href="servicos.html" class="text-white-50 text-decoration-none">Serviços</a></li>
+                        <li><a href="portfolio.html" class="text-white-50 text-decoration-none">Portfólio</a></li>
+                        <li><a href="sobre.html" class="text-white-50 text-decoration-none">Sobre Nós</a></li>
+                        <li><a href="contato.html" class="text-white-50 text-decoration-none">Contato</a></li>
                     </ul>
                 </div>
 
-                <!-- Services -->
-                <div class="footer-column">
-                    <h3 class="footer-title">Serviços</h3>
-                    <ul class="footer-links">
-                        <li>Tour Virtual 360°</li>
-                        <li>Fotografia Imobiliária</li>
-                        <li>Matterport 3D</li>
-                        <li>Vídeos Promocionais</li>
-                        <li>Plantas Interativas</li>
+                <div class="col-md-3 col-6 mb-4">
+                    <h5 class="text-white">Serviços</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="servicos.html" class="text-white-50 text-decoration-none">Tour Virtual 360°</a></li>
+                        <li><a href="servicos.html" class="text-white-50 text-decoration-none">Fotografia Imobiliária</a></li>
+                        <li><a href="servicos.html" class="text-white-50 text-decoration-none">Matterport 3D</a></li>
+                        <li><a href="servicos.html" class="text-white-50 text-decoration-none">Vídeos Promocionais</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact -->
-                <div class="footer-column">
-                    <h3 class="footer-title">Contato</h3>
-                    <div class="footer-contact">
-                        <div class="contact-item">
-                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
-                            <span>Av. Tecnologia, 1500 - São Paulo, SP</span>
-                        </div>
-                        <div class="contact-item">
-                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                            </svg>
-                            <span>(11) 3456-7890</span>
-                        </div>
-                        <div class="contact-item">
-                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
-                            <span>contato@techontour.com.br</span>
-                        </div>
-                    </div>
+                
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-white">Contato</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li class="d-flex align-items-start mb-2"><i class="bi bi-geo-alt-fill text-primary me-2 mt-1"></i><span>Av. Tecnologia, 1500<br>São Paulo, SP</span></li>
+                        <li class="d-flex align-items-start mb-2"><i class="bi bi-telephone-fill text-primary me-2 mt-1"></i><span>(11) 3456-7890</span></li>
+                        <li class="d-flex align-items-start mb-2"><i class="bi bi-envelope-fill text-primary me-2 mt-1"></i><span>contato@techontour.com.br</span></li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2023 TechON Tour Virtual. Todos os direitos reservados.</p>
+            
+            <div class="row border-top border-secondary pt-4 mt-4">
+                <div class="col-12 text-center small text-white-50">
+                    <p>&copy; 2025 TechON Tour Virtual. Todos os direitos reservados.</p>
+                </div>
             </div>
         </div>
     </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
