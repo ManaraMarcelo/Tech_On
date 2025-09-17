@@ -27,12 +27,19 @@
                 </button>
                 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav align-items-center">
                         <li class="nav-item"><a href="index.html" class="nav-link text-muted">Início</a></li>
                         <li class="nav-item"><a href="servicos.html" class="nav-link text-primary fw-bold">Serviços</a></li>
                         <li class="nav-item"><a href="portfolio.html" class="nav-link text-muted">Portfólio</a></li>
                         <li class="nav-item"><a href="sobre.html" class="nav-link text-muted">Sobre Nós</a></li>
-                        <li class="nav-item"><a href="contato.html" class="btn btn-primary ms-lg-3 mt-2 mt-lg-0">Contato</a></li>
+                        
+                        <li class="nav-item ms-lg-2">
+                            <a href="#" class="nav-link text-muted" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                <i class="bi bi-person-fill me-1"></i> Login
+                            </a>
+                        </li>
+
+                        <li class="nav-item"><a href="contato.html" class="btn btn-primary ms-lg-2 mt-2 mt-lg-0">Contato</a></li>
                     </ul>
                 </div>
             </div>
@@ -120,6 +127,48 @@
             </div>
         </section>
     </main>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="loginModalLabel">Acessar sua Conta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label">Endereço de e-mail</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="seuemail@exemplo.com" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="passwordInput" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="passwordInput" placeholder="Sua senha" required>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="rememberCheck">
+                                <label class="form-check-label" for="rememberCheck">
+                                    Lembrar de mim
+                                </label>
+                            </div>
+                            <a href="#" class="form-text text-decoration-none">Esqueceu sua senha?</a>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-100 btn-lg">Entrar</button>
+                    </form>
+                    
+                    <hr>
+
+                    <div class="text-center">
+                        <p class="text-muted">Não tem uma conta? <a href="#" class="text-decoration-none fw-bold">Cadastre-se</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="bg-dark text-white py-5">
         <div class="container">
