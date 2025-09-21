@@ -5,231 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - TechON Tour Virtual</title>
     <meta name="description" content="Entre em contato com a TechON para solicitar um orçamento ou tirar suas dúvidas. Estamos prontos para atender você.">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2">
-            <div class="container">
-                <a href="index.html" class="logo-link d-flex align-items-center me-3">
-                    <div class="logo me-2">
-                        <div class="logo-inner">
-                            <div class="logo-center"></div>
-                        </div>
-                    </div>
-                    <span class="logo-text">TechON</span>
-                </a>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a href="index.html" class="nav-link text-muted">Início</a></li>
-                        <li class="nav-item"><a href="servicos.html" class="nav-link text-muted">Serviços</a></li>
-                        <li class="nav-item"><a href="portfolio.html" class="nav-link text-muted">Portfólio</a></li>
-                        <li class="nav-item"><a href="sobre.html" class="nav-link text-muted">Sobre Nós</a></li>
-                        <li class="nav-item"><a href="contato.html" class="btn btn-primary ms-lg-3 mt-2 mt-lg-0">Contato</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section class="bg-light py-5 text-center">
-            <div class="container">
-                <h1 class="display-4 fw-bold">Entre em Contato</h1>
-                <p class="lead text-muted">Estamos prontos para transformar seu espaço em uma experiência virtual única.</p>
-            </div>
-        </section>
-
-        <section class="py-5">
-            <div class="container">
-                <div class="row g-5">
-                    <div class="col-lg-7">
-                        <h2 class="fw-bold mb-3">Solicite seu Orçamento</h2>
-                        <p class="text-muted mb-4">Preencha o formulário abaixo e nossa equipe retornará em até 24 horas.</p>
-                        
-                        <form action="#" method="POST">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="name" class="form-label">Nome Completo</label>
-                                    <input type="text" class="form-control" id="name" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="email" class="form-label">E-mail</label>
-                                    <input type="email" class="form-control" id="email" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="phone" class="form-label">Telefone / WhatsApp</label>
-                                    <input type="tel" class="form-control" id="phone" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="service" class="form-label">Serviço de Interesse</label>
-                                    <select id="service" class="form-select">
-                                        <option selected>Selecione um serviço...</option>
-                                        <option>Tour Virtual 360°</option>
-                                        <option>Fotografia Imobiliária</option>
-                                        <option>Matterport 3D</option>
-                                        <option>Vídeos Promocionais</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <label for="message" class="form-label">Mensagem</label>
-                                    <textarea class="form-control" id="message" rows="4" placeholder="Conte-nos mais sobre o seu projeto..."></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary btn-lg w-100">Enviar Solicitação</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-
-                    <div class="col-lg-5">
-                        <h2 class="fw-bold mb-3">Nossos Canais</h2>
-                        <p class="text-muted mb-4">Você também pode nos encontrar aqui:</p>
-                        <div class="d-flex flex-column gap-4">
-                            <div class="d-flex align-items-start">
-                                <i class="bi bi-telephone-fill fs-4 text-primary me-3"></i>
-                                <div>
-                                    <h5 class="fw-bold mb-0">Telefone</h5>
-                                    <p class="text-muted mb-0">(11) 3456-7890</p>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-start">
-                                <i class="bi bi-envelope-fill fs-4 text-primary me-3"></i>
-                                <div>
-                                    <h5 class="fw-bold mb-0">E-mail</h5>
-                                    <p class="text-muted mb-0">contato@techontour.com.br</p>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-start">
-                                <i class="bi bi-geo-alt-fill fs-4 text-primary me-3"></i>
-                                <div>
-                                    <h5 class="fw-bold mb-0">Endereço</h5>
-                                    <p class="text-muted mb-0">Av. Tecnologia, 1500 - São Paulo, SP</p>
-                                </div>
-                            </div>
-                            <a href="#" class="btn btn-success btn-lg d-flex align-items-center justify-content-center mt-3">
-                                <i class="bi bi-whatsapp me-2"></i> Chamar no WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-5 bg-light">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="display-5 fw-bold">Perguntas Frequentes</h2>
-                    <p class="lead text-muted">Tire suas dúvidas mais comuns sobre nossos serviços.</p>
-                </div>
-                <div class="accordion" id="faqAccordion">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Qual o prazo para entrega de um tour virtual?
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body text-muted">
-                                Normalmente entregamos em 3-5 dias úteis após a sessão de fotos. Para projetos urgentes, podemos entregar em até 24h com uma taxa adicional.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Os tours funcionam em dispositivos móveis?
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body text-muted">
-                                Sim! Nossos tours são totalmente responsivos e funcionam perfeitamente em smartphones, tablets e computadores, com navegação otimizada para cada dispositivo.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Preciso preparar o imóvel antes da sessão de fotos?
-                            </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body text-muted">
-                                Sim, recomendamos fortemente. Um espaço limpo, organizado e bem iluminado resulta em um tour virtual de qualidade muito superior. Fornecemos um checklist de preparação detalhado para ajudar você.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="map-section">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.983454395689!2d-46.69639898822096!3d-23.56892347870182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57a5043a8519%3A0x6ea56799b417e35e!2sVila%20Ol%C3%ADmpia%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1724458872019!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </section>
-
-    </main>
-
-    <footer class="bg-dark text-white py-5">
+<header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <a href="index.html" class="logo-link d-flex align-items-center mb-3 text-white text-decoration-none">
-                        <div class="logo me-2">
-                            <div class="logo-inner">
-                                <div class="logo-center"></div>
+            <a href="index.html" class="logo-link d-flex align-items-center me-3">
+                <div class="logo me-2"><div class="logo-inner"><div class="logo-center"></div></div></div>
+                <span class="logo-text">TechON</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="index.html" class="nav-link text-muted">Início</a></li>
+                    <li class="nav-item"><a href="servicos.html" class="nav-link text-muted">Serviços</a></li>
+                    <li class="nav-item"><a href="portfolio.html" class="nav-link text-muted">Portfólio</a></li>
+                    <li class="nav-item"><a href="sobre.html" class="nav-link text-muted">Sobre Nós</a></li>
+                    <li class="nav-item"><a href="contato.html" class="btn btn-primary ms-lg-3 mt-2 mt-lg-0">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="bg-light py-5 text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Entre em Contato</h1>
+            <p class="lead text-muted">Estamos prontos para transformar seu espaço em uma experiência virtual única.</p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <h2 class="fw-bold mb-3">Solicite seu Orçamento</h2>
+                    <p class="text-muted mb-4">Preencha o formulário abaixo e nossa equipe retorna em até 24 horas.</p>
+
+                    <form action="https://formsubmit.co/SEU_EMAIL_AQUI" method="POST">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">Nome Completo</label>
+                                <input type="text" class="form-control" id="name" name="nome" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Telefone / WhatsApp</label>
+                                <input type="tel" class="form-control" id="phone" name="telefone" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="service" class="form-label">Serviço de Interesse</label>
+                                <select id="service" class="form-select" name="servico">
+                                    <option selected>Selecione um serviço...</option>
+                                    <option>Tour Virtual 360°</option>
+                                    <option>Fotografia Imobiliária</option>
+                                    <option>Matterport 3D</option>
+                                    <option>Vídeos Promocionais</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label">Mensagem</label>
+                                <textarea class="form-control" id="message" name="mensagem" rows="4" placeholder="Conte-nos mais sobre o seu projeto..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-lg w-100">Enviar Solicitação</button>
                             </div>
                         </div>
-                        <span class="logo-text text-white">TechON</span>
-                    </a>
-                    <p class="small text-white-50">Transformamos espaços físicos em experiências virtuais imersivas, utilizando tecnologia de ponta e qualidade superior.</p>
-                </div>
-                
-                <div class="col-md-2 col-6 mb-4">
-                    <h5 class="text-white">Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-white-50 text-decoration-none">Início</a></li>
-                        <li><a href="servicos.html" class="text-white-50 text-decoration-none">Serviços</a></li>
-                        <li><a href="portfolio.html" class="text-white-50 text-decoration-none">Portfólio</a></li>
-                        <li><a href="sobre.html" class="text-white-50 text-decoration-none">Sobre Nós</a></li>
-                        <li><a href="contato.html" class="text-white-50 text-decoration-none">Contato</a></li>
-                    </ul>
+                    </form>
                 </div>
 
-                <div class="col-md-3 col-6 mb-4">
-                    <h5 class="text-white">Serviços</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="servicos.html" class="text-white-50 text-decoration-none">Tour Virtual 360°</a></li>
-                        <li><a href="servicos.html" class="text-white-50 text-decoration-none">Fotografia Imobiliária</a></li>
-                        <li><a href="servicos.html" class="text-white-50 text-decoration-none">Matterport 3D</a></li>
-                        <li><a href="servicos.html" class="text-white-50 text-decoration-none">Vídeos Promocionais</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-md-3 mb-4">
-                    <h5 class="text-white">Contato</h5>
-                    <ul class="list-unstyled text-white-50">
-                        <li class="d-flex align-items-start mb-2"><i class="bi bi-geo-alt-fill text-primary me-2 mt-1"></i><span>Av. Tecnologia, 1500<br>São Paulo, SP</span></li>
-                        <li class="d-flex align-items-start mb-2"><i class="bi bi-telephone-fill text-primary me-2 mt-1"></i><span>(11) 3456-7890</span></li>
-                        <li class="d-flex align-items-start mb-2"><i class="bi bi-envelope-fill text-primary me-2 mt-1"></i><span>contato@techontour.com.br</span></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="row border-top border-secondary pt-4 mt-4">
-                <div class="col-12 text-center small text-white-50">
-                    <p>&copy; 2025 TechON Tour Virtual. Todos os direitos reservados.</p>
+                <div class="col-lg-5">
+                    <h2 class="fw-bold mb-3">Nossos Canais</h2>
+                    <p class="text-muted mb-4">Você também pode nos encontrar aqui:</p>
+                    <div class="d-flex flex-column gap-4">
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-telephone-fill fs-4 text-primary me-3"></i>
+                            <div>
+                                <h5 class="fw-bold mb-0">Celular</h5>
+                                <p class="text-muted mb-0">(19) 99736-9589</p>
+                                <p class="text-muted mb-0">(19) 97816-0773</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-geo-alt-fill fs-4 text-primary me-3"></i>
+                            <div>
+                                <h5 class="fw-bold mb-0">Endereço</h5>
+                                <p class="text-muted mb-0">Avenida 22 de Outubro, 1404<br>Mogi-Mirim - SP</p>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/5519997369589" class="btn btn-success btn-lg d-flex align-items-center justify-content-center mt-3" target="_blank">
+                            <i class="bi bi-whatsapp me-2"></i> Chamar no WhatsApp
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </section>
+
+    <!-- Mapa atualizado -->
+    <section class="map-section">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.212597705415!2d-46.954364!3d-22.434845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8cb6ad8b9b2f9%3A0x123456789abcdef!2sAv.%2022%20de%20Outubro%2C%201404%20-%20Mogi%20Mirim%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1724458872019!5m2!1spt-BR!2sbr" 
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+</main>
+
+<footer class="bg-dark text-white py-5 text-center">
+    <div class="container">
+        <p class="small text-white-50">&copy; 2025 TechON Tour Virtual. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
