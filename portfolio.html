@@ -32,7 +32,7 @@
             <li class="nav-item"><a href="portfolio.html" class="nav-link text-primary fw-bold">Portfólio</a></li>
             <li class="nav-item"><a href="sobre.html" class="nav-link text-muted">Sobre Nós</a></li>
             <li class="nav-item ms-lg-2">
-              <a href="#" id="LoginStatusLink" class="nav-link text-muted" data-bs-toggle="modal" data-bs-target="#loginModal">
+              <a href="#" id="loginStatusLink" class="nav-link text-muted" data-bs-toggle="modal" data-bs-target="#loginModal">
                 <i class="bi bi-person-fill me-1"></i> Login
               </a>
             </li>
@@ -44,7 +44,6 @@
   </header>
 
   <main>
-    <!-- Seção de título -->
     <section class="bg-light py-5 text-center">
       <div class="container">
         <h1 class="display-4 fw-bold">Nosso Portfólio</h1>
@@ -52,12 +51,10 @@
       </div>
     </section>
 
-    <!-- Portfólio -->
     <section class="py-5">
       <div class="container">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
-          <!-- Estúdio Boxe Mario Paiva -->
           <div class="col">
             <div class="card h-100 shadow-sm border-0 overflow-hidden">
               <div class="ratio ratio-16x9">
@@ -80,7 +77,6 @@
             </div>
           </div>
 
-          <!-- Paiva Utilidades -->
           <div class="col">
             <div class="card h-100 shadow-sm border-0 overflow-hidden">
               <div class="ratio ratio-16x9">
@@ -103,7 +99,6 @@
             </div>
           </div>
 
-          <!-- Fatec Arthur de Azevedo -->
           <div class="col">
             <div class="card h-100 shadow-sm border-0 overflow-hidden">
               <div class="ratio ratio-16x9">
@@ -130,7 +125,6 @@
       </div>
     </section>
 
-    <!-- Chamada de ação -->
     <section class="py-5 text-center text-white" style="background: linear-gradient(135deg, #4285f4, #3367d6);">
       <div class="container">
         <div class="row justify-content-center">
@@ -146,7 +140,6 @@
     </section>
   </main>
 
-  <!-- Modal Login -->
   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
@@ -161,11 +154,11 @@
                   <form>
                       <div class="mb-3">
                           <label for="emailInput" class="form-label">Endereço de e-mail</label>
-                          <input type="email" class="form-control" id="emailInput" placeholder="teste@teste" required>
+                          <input type="email" class="form-control" id="emailInput" placeholder="seuemail@exemplo.com" required>
                       </div>
                       <div class="mb-3">
                           <label for="passwordInput" class="form-label">Senha</label>
-                          <input type="password" class="form-control" id="passwordInput" placeholder="teste" required>
+                          <input type="password" class="form-control" id="passwordInput" placeholder="Sua senha" required>
                       </div>
                       <div class="d-flex justify-content-between align-items-center mb-4">
                           <div class="form-check">
@@ -185,7 +178,6 @@
       </div>
   </div>
 
-  <!-- Rodapé ATUALIZADO -->
   <footer class="bg-dark text-white py-5">
     <div class="container">
       <div class="row">
@@ -255,5 +247,8 @@
   </footer>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+  <script src="scripts.js"></script>
+
 </body>
 </html>
