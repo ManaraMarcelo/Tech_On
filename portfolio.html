@@ -19,7 +19,7 @@
 <body>
   <!-- ===================== HEADER / NAVBAR ===================== -->
   <header class="header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2" aria-label="Navegação principal">
       <div class="container">
         <!-- Logo + retorno à Home -->
         <a href="index.html" class="logo-link d-flex align-items-center me-3">
@@ -32,7 +32,7 @@
         </a>
 
         <!-- Botão (mobile) -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -42,13 +42,13 @@
             <li class="nav-item"><a href="index.html" class="nav-link text-muted">Início</a></li>
             <li class="nav-item"><a href="servicos.html" class="nav-link text-muted">Serviços</a></li>
             <!-- Página atual destacada -->
-            <li class="nav-item"><a href="portfolio.html" class="nav-link text-primary fw-bold">Portfólio</a></li>
+            <li class="nav-item"><a href="portfolio.html" class="nav-link text-primary fw-bold" aria-current="page">Portfólio</a></li>
             <li class="nav-item"><a href="sobre.html" class="nav-link text-muted">Sobre Nós</a></li>
 
             <!-- Abre modal de Login -->
             <li class="nav-item ms-lg-2">
               <a href="#" id="loginStatusLink" class="nav-link text-muted" data-bs-toggle="modal" data-bs-target="#loginModal">
-                <i class="bi bi-person-fill me-1"></i> Login
+                <i class="bi bi-person-fill me-1" aria-hidden="true"></i> Login
               </a>
             </li>
 
@@ -61,7 +61,7 @@
   </header>
 
   <!-- ===================== CONTEÚDO PRINCIPAL ===================== -->
-  <main>
+  <main role="main">
     <!-- ===== Intro do Portfólio ===== -->
     <section class="bg-light py-5 text-center">
       <div class="container">
@@ -176,7 +176,7 @@
   </main>
 
   <!-- ===================== LOGIN ===================== -->
-  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" role="dialog" aria-modal="true">
       <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
               <div class="modal-header">
@@ -265,18 +265,18 @@
           <h5 class="text-white">Contato</h5>
           <ul class="list-unstyled text-white-50">
             <li class="d-flex align-items-start mb-2">
-              <i class="bi bi-geo-alt-fill text-primary me-2 mt-1"></i>
+              <i class="bi bi-geo-alt-fill text-primary me-2 mt-1" aria-hidden="true"></i>
               <span>Avenida 22 de Outubro, 1404<br>Mogi-Mirim - SP</span>
             </li>
             <li class="d-flex align-items-start mb-2">
-              <i class="bi bi-telephone-fill text-primary me-2 mt-1"></i>
+              <i class="bi bi-telephone-fill text-primary me-2 mt-1" aria-hidden="true"></i>
               <span>
                 <a class="text-white-50 text-decoration-none" href="tel:+5519997369589">(19) 99736-9589</a> |
                 <a class="text-white-50 text-decoration-none" href="tel:+5519978160773">(19) 97816-0773</a>
               </span>
             </li>
             <li class="d-flex align-items-start mb-2">
-              <i class="bi bi-envelope-fill text-primary me-2 mt-1"></i>
+              <i class="bi bi-envelope-fill text-primary me-2 mt-1" aria-hidden="true"></i>
               <span><a class="text-white-50 text-decoration-none" href="mailto:contato@techontour.com.br">contato@techontour.com.br</a></span>
             </li>
           </ul>
@@ -292,7 +292,7 @@
     </div>
   </footer>
   
-  <!-- Bootstrap JS (modal, collapse etc.) -->
+  <!-- Bootstrap (modais, colapses etc.) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="scripts.js"></script>
 </body>

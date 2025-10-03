@@ -19,7 +19,7 @@
 <body>
 <!-- ===================== HEADER / NAVBAR ===================== -->
 <header class="header">
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2" aria-label="Navegação principal">
     <div class="container">
       <!-- Logo + link para Home -->
       <a href="index.html" class="logo-link d-flex align-items-center me-3">
@@ -37,14 +37,14 @@
         <ul class="navbar-nav align-items-center">
           <li class="nav-item"><a href="index.html" class="nav-link text-muted">Início</a></li>
           <!-- Página atual realçada -->
-          <li class="nav-item"><a href="servicos.html" class="nav-link text-primary fw-bold">Serviços</a></li>
+          <li class="nav-item"><a href="servicos.html" class="nav-link text-primary fw-bold" aria-current="page">Serviços</a></li>
           <li class="nav-item"><a href="portfolio.html" class="nav-link text-muted">Portfólio</a></li>
           <li class="nav-item"><a href="sobre.html" class="nav-link text-muted">Sobre Nós</a></li>
 
           <!-- Abre modal de login -->
           <li class="nav-item ms-lg-2">
             <a href="#" id="loginStatusLink" class="nav-link text-muted" data-bs-toggle="modal" data-bs-target="#loginModal">
-              <i class="bi bi-person-fill me-1"></i> Login
+              <i class="bi bi-person-fill me-1" aria-hidden="true"></i> Login
             </a>
           </li>
 
@@ -57,7 +57,7 @@
 </header>
 
 <!-- ===================== CONTEÚDO PRINCIPAL ===================== -->
-<main>
+<main role="main">
   <!-- ===== Intro da página ===== -->
   <section class="bg-light py-5 text-center">
     <div class="container">
@@ -74,17 +74,17 @@
       <div class="row align-items-center g-5 mb-5">
         <!-- Texto e bullets -->
         <div class="col-lg-6">
-          <i class="bi bi-camera-reels-fill fs-1 text-primary mb-3"></i>
+          <i class="bi bi-camera-reels-fill fs-1 text-primary mb-3" aria-hidden="true"></i>
           <h2 class="fw-bold mb-3">Tour Virtual 360°</h2>
           <p class="lead text-muted">
             Nossas experiências imersivas permitem que seus clientes explorem cada detalhe do ambiente como se estivessem fisicamente presentes.
           </p>
           <!-- Lista de benefícios -->
           <ul class="list-unstyled text-muted mt-4">
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Resolução ultra-alta (até 8K)</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Navegação intuitiva e responsiva</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Compatível com dispositivos móveis</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Integração com redes sociais</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Resolução ultra-alta (até 8K)</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Navegação intuitiva e responsiva</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Compatível com dispositivos móveis</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Integração com redes sociais</li>
           </ul>
         </div>
         <!-- Imagem ilustrativa -->
@@ -100,16 +100,16 @@
       <!-- ===== Serviço 2: Fotografia Imobiliária ===== -->
       <div class="row align-items-center g-5 mb-5 flex-lg-row-reverse">
         <div class="col-lg-6">
-          <i class="bi bi-camera-fill fs-1 text-primary mb-3"></i>
+          <i class="bi bi-camera-fill fs-1 text-primary mb-3" aria-hidden="true"></i>
           <h2 class="fw-bold mb-3">Fotografia Imobiliária</h2>
           <p class="lead text-muted">
             Fotografias profissionais que destacam os melhores ângulos e características do seu imóvel. Nossa equipe utiliza técnicas avançadas para criar imagens que vendem.
           </p>
           <ul class="list-unstyled text-muted mt-4">
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Técnica HDR (High Dynamic Range)</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Edição profissional incluída</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Múltiplos ângulos por ambiente</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Entrega rápida em até 48h</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Técnica HDR (High Dynamic Range)</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Edição profissional incluída</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Múltiplos ângulos por ambiente</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Entrega rápida em até 48h</li>
           </ul>
         </div>
         <div class="col-lg-6">
@@ -124,16 +124,16 @@
       <!-- ===== Serviço 3: Matterport 3D ===== -->
       <div class="row align-items-center g-5 mb-5">
         <div class="col-lg-6">
-          <i class="bi bi-house-door-fill fs-1 text-primary mb-3"></i>
+          <i class="bi bi-house-door-fill fs-1 text-primary mb-3" aria-hidden="true"></i>
           <h2 class="fw-bold mb-3">Matterport 3D</h2>
           <p class="lead text-muted">
             Modelos 3D precisos e detalhados que permitem visualização completa do espaço. A tecnologia Matterport oferece medições exatas e uma experiência de navegação única.
           </p>
           <ul class="list-unstyled text-muted mt-4">
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Modelo 3D interativo</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Medições precisas de ambientes</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Geração de plantas baixas</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Visualização "Casa de Boneca" (Dollhouse)</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Modelo 3D interativo</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Medições precisas de ambientes</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Geração de plantas baixas</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Visualização "Casa de Boneca" (Dollhouse)</li>
           </ul>
         </div>
         <div class="col-lg-6">
@@ -163,7 +163,7 @@
 </main>
 
 <!-- ===================== LOGIN ===================== -->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -245,9 +245,9 @@
       <div class="col-md-3 mb-4">
         <h5 class="text-white">Contato</h5>
         <ul class="list-unstyled text-white-50">
-          <li class="d-flex align-items-start mb-2"><i class="bi bi-geo-alt-fill text-primary me-2 mt-1"></i><span>Avenida 22 de Outubro, 1404<br>Mogi-Mirim - SP</span></li>
-          <li class="d-flex align-items-start mb-2"><i class="bi bi-telephone-fill text-primary me-2 mt-1"></i><span>(19) 99736-9589 | (19) 97816-0773</span></li>
-          <li class="d-flex align-items-start mb-2"><i class="bi bi-envelope-fill text-primary me-2 mt-1"></i><span>contato@techontour.com.br</span></li>
+          <li class="d-flex align-items-start mb-2"><i class="bi bi-geo-alt-fill text-primary me-2 mt-1" aria-hidden="true"></i><span>Avenida 22 de Outubro, 1404<br>Mogi-Mirim - SP</span></li>
+          <li class="d-flex align-items-start mb-2"><i class="bi bi-telephone-fill text-primary me-2 mt-1" aria-hidden="true"></i><span>(19) 99736-9589 | (19) 97816-0773</span></li>
+          <li class="d-flex align-items-start mb-2"><i class="bi bi-envelope-fill text-primary me-2 mt-1" aria-hidden="true"></i><span>contato@techontour.com.br</span></li>
         </ul>
       </div>
     </div>

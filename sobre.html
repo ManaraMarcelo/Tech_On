@@ -18,8 +18,8 @@
 </head>
 <body>
 <!-- ===================== HEADER / NAVBAR ===================== -->
-<header class="header">
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2">
+<header class="header" role="banner">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2" aria-label="Navegação principal">
     <div class="container">
       <!-- Branding + retorno à Home -->
       <a href="index.html" class="logo-link d-flex align-items-center me-3">
@@ -28,7 +28,7 @@
       </a>
 
       <!-- Botão (mobile) -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -39,12 +39,12 @@
           <li class="nav-item"><a href="servicos.html" class="nav-link text-muted">Serviços</a></li>
           <li class="nav-item"><a href="portfolio.html" class="nav-link text-muted">Portfólio</a></li>
           <!-- Página atual destacada -->
-          <li class="nav-item"><a href="sobre.html" class="nav-link text-primary fw-bold">Sobre Nós</a></li>
+          <li class="nav-item"><a href="sobre.html" class="nav-link text-primary fw-bold" aria-current="page">Sobre Nós</a></li>
 
           <!-- Abre modal de Login -->
           <li class="nav-item ms-lg-2">
             <a href="#" id="loginStatusLink" class="nav-link text-muted" data-bs-toggle="modal" data-bs-target="#loginModal">
-              <i class="bi bi-person-fill me-1"></i> Login
+              <i class="bi bi-person-fill me-1" aria-hidden="true"></i> Login
             </a>
           </li>
 
@@ -57,22 +57,22 @@
 </header>
 
 <!-- ===================== CONTEÚDO PRINCIPAL ===================== -->
-<main>
+<main role="main">
   <!-- ===== Intro ===== -->
-  <section class="bg-light py-5 text-center">
+  <section class="bg-light py-5 text-center" aria-labelledby="titulo-sobre">
     <div class="container">
-      <h1 class="display-4 fw-bold">Sobre a TechON</h1>
+      <h1 class="display-4 fw-bold" id="titulo-sobre">Sobre a TechON</h1>
       <p class="lead text-muted">Inovação e qualidade em tours virtuais desde 2020</p>
     </div>
   </section>
 
   <!-- ===== Nossa História ===== -->
-  <section class="py-5">
+  <section class="py-5" aria-labelledby="sec-historia">
     <div class="container">
       <div class="row align-items-center g-5">
         <!-- Texto -->
         <div class="col-lg-6">
-          <h2 class="fw-bold mb-3">Nossa História</h2>
+          <h2 class="fw-bold mb-3" id="sec-historia">Nossa História</h2>
           <p class="lead text-muted">
             A TechON nasceu da união de duas paixões: tecnologia e inovação. Fundada por dois amigos que sempre
             compartilharam o desejo de transformar ideias em experiências, a empresa surgiu com um propósito claro:
@@ -97,11 +97,12 @@
   </section>
 
   <!-- ===== Missão, Visão, Valores ===== -->
-  <section class="py-5 bg-light">
+  <section class="py-5 bg-light" aria-labelledby="sec-mvv">
     <div class="container">
-      <div class="row g-4 text-center">
+      <h2 id="sec-mvv" class="visually-hidden">Missão, Visão e Valores</h2>
+      <div class="row g-4 text-center" role="list">
         <!-- Missão -->
-        <div class="col-lg-4">
+        <div class="col-lg-4" role="listitem">
           <div class="p-4">
             <i class="bi bi-bullseye fs-1 text-primary mb-3" aria-hidden="true"></i>
             <h3 class="fw-bold">Missão</h3>
@@ -109,7 +110,7 @@
           </div>
         </div>
         <!-- Visão -->
-        <div class="col-lg-4">
+        <div class="col-lg-4" role="listitem">
           <div class="p-4">
             <i class="bi bi-eye-fill fs-1 text-primary mb-3" aria-hidden="true"></i>
             <h3 class="fw-bold">Visão</h3>
@@ -117,7 +118,7 @@
           </div>
         </div>
         <!-- Valores -->
-        <div class="col-lg-4">
+        <div class="col-lg-4" role="listitem">
           <div class="p-4">
             <i class="bi bi-gem fs-1 text-primary mb-3" aria-hidden="true"></i>
             <h3 class="fw-bold">Valores</h3>
@@ -129,17 +130,17 @@
   </section>
 
   <!-- ===== Nossa Equipe ===== -->
-  <section class="py-5">
+  <section class="py-5" aria-labelledby="sec-equipe">
     <div class="container">
       <div class="text-center mb-5">
-        <h2 class="display-5 fw-bold">Nossa Equipe</h2>
+        <h2 class="display-5 fw-bold" id="sec-equipe">Nossa Equipe</h2>
         <p class="lead text-muted">Os fundadores e especialistas por trás da TechON</p>
       </div>
 
       <!-- Cards de fundadores -->
-      <div class="row justify-content-center g-4">
+      <div class="row justify-content-center g-4" role="list">
         <!-- Lucas -->
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6" role="listitem">
           <div class="card text-center border-0 shadow-sm h-100">
             <div class="card-body p-4">
               <img src="imgs/lucas.png" class="rounded-circle mb-3" alt="Foto de Lucas Vieira" width="120" height="120" style="object-fit: cover;">
@@ -155,7 +156,7 @@
         </div>
 
         <!-- Kalel -->
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6" role="listitem">
           <div class="card text-center border-0 shadow-sm h-100">
             <div class="card-body p-4">
               <img src="imgs/kalel.JPG" class="rounded-circle mb-3" alt="Foto de Kalel Araujo" width="120" height="120" style="object-fit: cover;">
@@ -173,11 +174,11 @@
   </section>
 
   <!-- ===== CTA final ===== -->
-  <section class="py-5 text-center text-white" style="background: linear-gradient(135deg, #4285f4, #3367d6);">
+  <section class="py-5 text-center text-white" style="background: linear-gradient(135deg, #4285f4, #3367d6);" aria-labelledby="sec-cta">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8">
-          <h2 class="fw-bold mb-3">Vamos Trabalhar Juntos?</h2>
+          <h2 class="fw-bold mb-3" id="sec-cta">Vamos Trabalhar Juntos?</h2>
           <p class="lead mb-4">Entre em contato conosco e descubra como nossa experiência pode transformar seu projeto.</p>
           <a href="contato.html" class="btn btn-light btn-lg">Entrar em Contato</a>
         </div>
@@ -187,16 +188,16 @@
 </main>
 
 <!-- ===================== LOGIN ===================== -->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title fw-bold" id="loginModalLabel">Acessar sua Conta</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
             </div>
             <div class="modal-body">
                 <!-- Alerta de erro -->
-                <div id="loginError" class="alert alert-danger d-none" role="alert">
+                <div id="loginError" class="alert alert-danger d-none" role="alert" aria-live="assertive">
                     E-mail ou senha incorretos. Tente novamente.
                 </div>
 
@@ -204,11 +205,11 @@
                 <form>
                     <div class="mb-3">
                         <label for="emailInput" class="form-label">Endereço de e-mail</label>
-                        <input type="email" class="form-control" id="emailInput" placeholder="teste@teste" required>
+                        <input type="email" class="form-control" id="emailInput" placeholder="teste@teste" required aria-required="true">
                     </div>
                     <div class="mb-3">
                         <label for="passwordInput" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="passwordInput" placeholder="teste" required>
+                        <input type="password" class="form-control" id="passwordInput" placeholder="teste" required aria-required="true">
                     </div>
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <div class="form-check">
@@ -230,7 +231,7 @@
 </div>
 
 <!-- ===================== FOOTER ===================== -->
-<footer class="bg-dark text-white py-5">
+<footer class="bg-dark text-white py-5" role="contentinfo" aria-label="Rodapé">
   <div class="container">
     <div class="row">
       <!-- Coluna 1: Descrição -->
@@ -269,9 +270,9 @@
       <div class="col-md-3 mb-4">
         <h5 class="text-white">Contato</h5>
         <ul class="list-unstyled text-white-50">
-          <li class="d-flex align-items-start mb-2"><i class="bi bi-geo-alt-fill text-primary me-2 mt-1"></i><span>Avenida 22 de Outubro, 1404<br>Mogi-Mirim - SP</span></li>
-          <li class="d-flex align-items-start mb-2"><i class="bi bi-telephone-fill text-primary me-2 mt-1"></i><span>(19) 99736-9589 | (19) 97816-0773</span></li>
-          <li class="d-flex align-items-start mb-2"><i class="bi bi-envelope-fill text-primary me-2 mt-1"></i><span>contato@techontour.com.br</span></li>
+          <li class="d-flex align-items-start mb-2"><i class="bi bi-geo-alt-fill text-primary me-2 mt-1" aria-hidden="true"></i><span>Avenida 22 de Outubro, 1404<br>Mogi-Mirim - SP</span></li>
+          <li class="d-flex align-items-start mb-2"><i class="bi bi-telephone-fill text-primary me-2 mt-1" aria-hidden="true"></i><span>(19) 99736-9589 | (19) 97816-0773</span></li>
+          <li class="d-flex align-items-start mb-2"><i class="bi bi-envelope-fill text-primary me-2 mt-1" aria-hidden="true"></i><span>contato@techontour.com.br</span></li>
         </ul>
       </div>
     </div>
