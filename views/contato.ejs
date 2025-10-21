@@ -1,57 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - TechON Tour Virtual</title>
-    <!-- Ícone -->
-    <link rel="icon" type="image/png" href="imgs/flavicon.png">
-
-    <!-- Descrição da página -->
-    <meta name="description" content="Entre em contato com a TechON para solicitar um orçamento ou tirar suas dúvidas. Estamos prontos para atender você.">
-    
-    <!-- CSS do Bootstrap, ícones-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header class="header">
-    <!-- Navbar responsiva com logo, navegação e atalho para contato/login -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2" aria-label="Navegação principal">
-        <div class="container">
-            <!-- Branding + link para home -->
-            <a href="index.html" class="logo-link d-flex align-items-center me-3">
-                <div class="logo me-2"><div class="logo-inner"><div class="logo-center"></div></div></div>
-                <span class="logo-text">TechON</span>
-            </a>
-            <!-- Botão(menu mobile) -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Alternar navegação" aria-controls="navbarNav" aria-expanded="false">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Itens do menu -->
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a href="index.html" class="nav-link text-muted">Início</a></li>
-                    <li class="nav-item"><a href="servicos.html" class="nav-link text-muted">Serviços</a></li>
-                    <li class="nav-item"><a href="portfolio.html" class="nav-link text-muted">Portfólio</a></li>
-                    <li class="nav-item"><a href="sobre.html" class="nav-link text-muted">Sobre Nós</a></li>
-                    <li class="nav-item ms-lg-2">
-                        <!-- Abre modal de login -->
-                        <a href="#" id="loginStatusLink" class="nav-link text-muted" data-bs-toggle="modal" data-bs-target="#loginModal">
-                            <i class="bi bi-person-fill me-1" aria-hidden="true"></i> Login
-                        </a>
-                    </li>
-                    <!-- CTA para página de contato -->
-                    <li class="nav-item"><a href="contato.html" class="btn btn-primary ms-lg-2 mt-2 mt-lg-0" aria-current="page">Contato</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
 
 <main role="main">
-    <!-- Container de toast -->
     <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1100">
         <div id="notificationToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
@@ -66,7 +16,6 @@
         </div>
     </div>
 
-    <!-- Intro da página de contato -->
     <section class="bg-light py-5 text-center">
         <div class="container">
             <h1 class="display-4 fw-bold">Entre em Contato</h1>
@@ -74,38 +23,31 @@
         </div>
     </section>
 
-    <!-- Seção principal com formulário e dados de contato -->
     <section class="py-5">
         <div class="container">
             <div class="row g-5">
-                <!-- Coluna do formulário -->
                 <div class="col-lg-7">
                     <h2 class="fw-bold mb-3">Solicite seu Orçamento</h2>
                     <p class="text-muted mb-4">Preencha o formulário abaixo e nossa equipe retorna em até 24 horas.</p>
 
-                    <!-- Formulário de contato -->
                     <form id="contactForm" action="https://formsubmit.co/zmarcelo2018@gmail.com" method="POST">
-                        <input type="hidden" name="_next" value="https://tech-on-eight.vercel.app/contato.html?status=sucesso">
+                        <input type="hidden" name="_next" value="https://tech-on-eight.vercel.app/contato?status=sucesso">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_subject" value="Novo Contato do Site TechON!">
 
                         <div class="row g-3">
-                            <!-- Nome -->
                             <div class="col-md-6">
                                 <label for="name" class="form-label">Nome Completo</label>
                                 <input type="text" class="form-control" id="name" name="nome" required>
                             </div>
-                            <!-- E-mail -->
                             <div class="col-md-6">
                                 <label for="email" class="form-label">E-mail</label>
                                 <input type="email" class="form-control" id="email" name="email" required>
                             </div>
-                            <!-- Telefone -->
                             <div class="col-md-6">
                                 <label for="phone" class="form-label">Telefone / WhatsApp</label>
                                 <input type="tel" class="form-control" id="phone" name="telefone" required>
                             </div>
-                            <!-- CPF com feedback de validação -->
                             <div class="col-md-6">
                                 <label for="cpf" class="form-label">CPF</label>
                                 <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00" required aria-describedby="cpfFeedback">
@@ -113,7 +55,6 @@
                                     Por favor, digite um CPF válido.
                                 </div>
                             </div>
-                            <!-- Serviço de interesse -->
                             <div class="col-12">
                                 <label for="service" class="form-label">Serviço de Interesse</label>
                                 <select id="service" class="form-select" name="servico">
@@ -124,12 +65,10 @@
                                     <option>Vídeos Promocionais</option>
                                 </select>
                             </div>
-                            <!-- Mensagem -->
                             <div class="col-12">
                                 <label for="message" class="form-label">Mensagem</label>
                                 <textarea class="form-control" id="message" name="mensagem" rows="4" placeholder="Conte-nos mais sobre o seu projeto..."></textarea>
                             </div>
-                            <!-- Botão de envio -->
                             <div class="col-12">
                                 <button type="submit" class="btn btn-primary btn-lg w-100">Enviar Solicitação</button>
                             </div>
@@ -137,12 +76,10 @@
                     </form>
                 </div>
 
-                <!-- Coluna com canais de contato -->
                 <div class="col-lg-5">
                     <h2 class="fw-bold mb-3">Nossos Canais</h2>
                     <p class="text-muted mb-4">Você também pode nos encontrar aqui:</p>
                     <div class="d-flex flex-column gap-4">
-                        <!-- Telefones -->
                         <div class="d-flex align-items-start">
                             <i class="bi bi-telephone-fill fs-4 text-primary me-3" aria-hidden="true"></i>
                             <div>
@@ -151,7 +88,6 @@
                                 <p class="text-muted mb-0">(19) 97816-0773</p>
                             </div>
                         </div>
-                        <!-- Endereço -->
                         <div class="d-flex align-items-start">
                             <i class="bi bi-geo-alt-fill fs-4 text-primary me-3" aria-hidden="true"></i>
                             <div>
@@ -159,7 +95,6 @@
                                 <p class="text-muted mb-0">Avenida 22 de Outubro, 1404<br>Mogi-Mirim - SP</p>
                             </div>
                         </div>
-                        <!-- Botão WhatsApp -->
                         <a href="https://wa.me/5519997369589" class="btn btn-success btn-lg d-flex align-items-center justify-content-center mt-3" target="_blank">
                             <i class="bi bi-whatsapp me-2" aria-hidden="true"></i> Chamar no WhatsApp
                         </a>
@@ -169,13 +104,11 @@
         </div>
     </section>
 
-    <!-- Mapa incorporado (Google Maps) mostrando o endereço -->
     <section class="map-section">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.212597705415!2d-46.954364!3d-22.434845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8cb6ad8b9b2f9%3A0x123456789abcdef!2sAv.%2022%20de%20Outubro%2C%201404%20-%20Mogi%20Mirim%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1724458872019!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </section>
 </main>
 
-<!-- Modal de Login -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -184,11 +117,9 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <!-- Alerta de erro -->
                 <div id="loginError" class="alert alert-danger d-none" role="alert">
                     E-mail ou senha incorretos. Tente novamente.
                 </div>
-                <!-- Form de exemplo para autenticação -->
                 <form>
                     <div class="mb-3">
                         <label for="emailInput" class="form-label">Endereço de e-mail</label>
@@ -216,61 +147,4 @@
     </div>
 </div>
 
-<footer class="bg-dark text-white py-5">
-    <div class="container">
-        <div class="row">
-            <!-- Coluna 1: Descrição -->
-            <div class="col-md-4 mb-4">
-                <a href="index.html" class="logo-link d-flex align-items-center mb-3 text-white text-decoration-none">
-                    <div class="logo me-2">
-                        <div class="logo-inner"><div class="logo-center"></div></div>
-                    </div>
-                    <span class="logo-text text-white">TechON</span>
-                </a>
-                <p class="small text-white-50">Transformamos espaços físicos em experiências virtuais imersivas, utilizando tecnologia de ponta e qualidade superior.</p>
-            </div>
-            <!-- Coluna 2: links de navegação -->
-            <div class="col-md-2 col-6 mb-4">
-                <h5 class="text-white">Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="index.html" class="text-white-50 text-decoration-none">Início</a></li>
-                    <li><a href="servicos.html" class="text-white-50 text-decoration-none">Serviços</a></li>
-                    <li><a href="portfolio.html" class="text-white-50 text-decoration-none">Portfólio</a></li>
-                    <li><a href="sobre.html" class="text-white-50 text-decoration-none">Sobre Nós</a></li>
-                    <li><a href="contato.html" class="text-white-50 text-decoration-none">Contato</a></li>
-                </ul>
-            </div>
-            <!-- Coluna 3: lista de serviços -->
-            <div class="col-md-3 col-6 mb-4">
-                <h5 class="text-white">Serviços</h5>
-                <ul class="list-unstyled">
-                    <li><a href="servicos.html" class="text-white-50 text-decoration-none">Tour Virtual 360°</a></li>
-                    <li><a href="servicos.html" class="text-white-50 text-decoration-none">Fotografia Imobiliária</a></li>
-                    <li><a href="servicos.html" class="text-white-50 text-decoration-none">Matterport 3D</a></li>
-                    <li><a href="servicos.html" class="text-white-50 text-decoration-none">Vídeos Promocionais</a></li>
-                </ul>
-            </div>
-            <!-- Coluna 4: informações de contato -->
-            <div class="col-md-3 mb-4">
-                <h5 class="text-white">Contato</h5>
-                <ul class="list-unstyled text-white-50">
-                    <li class="d-flex align-items-start mb-2"><i class="bi bi-geo-alt-fill text-primary me-2 mt-1" aria-hidden="true"></i><span>Avenida 22 de Outubro, 1404<br>Mogi-Mirim - SP</span></li>
-                    <li class="d-flex align-items-start mb-2"><i class="bi bi-telephone-fill text-primary me-2 mt-1" aria-hidden="true"></i><span>(19) 99736-9589</span></li>
-                    <li class="d-flex align-items-start mb-2"><i class="bi bi-envelope-fill text-primary me-2 mt-1" aria-hidden="true"></i><span><a class="text-white-50 text-decoration-none" href="mailto:contato@techontour.com.br">contato@techontour.com.br</a></span></li>
-                </ul>
-            </div>
-        </div>
-        <!-- Barra inferior de direitos autorais -->
-        <div class="row border-top border-secondary pt-4 mt-4">
-            <div class="col-12 text-center small text-white-50">
-                <p>&copy; 2025 TechON Tour Virtual. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- Bootstrap Bundle (modais, colapses etc.) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="scripts.js"></script>
-</body>
-</html>
+<%- include('partials/footer') %>

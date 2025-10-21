@@ -1,0 +1,27 @@
+<header class="header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2" aria-label="Navegação principal">
+    <div class="container">
+      <a href="/" class="logo-link d-flex align-items-center me-3">
+        <div class="logo me-2"><div class="logo-inner"><div class="logo-center"></div></div></div>
+        <span class="logo-text">TechON</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a href="/" class="nav-link <%= (activePage === 'inicio') ? 'text-primary fw-bold' : 'text-muted' %>" <%= (activePage === 'inicio') ? 'aria-current="page"' : '' %>>Início</a></li>
+          <li class="nav-item"><a href="/servicos" class="nav-link <%= (activePage === 'servicos') ? 'text-primary fw-bold' : 'text-muted' %>" <%= (activePage === 'servicos') ? 'aria-current="page"' : '' %>>Serviços</a></li>
+          <li class="nav-item"><a href="/portfolio" class="nav-link <%= (activePage === 'portfolio') ? 'text-primary fw-bold' : 'text-muted' %>" <%= (activePage === 'portfolio') ? 'aria-current="page"' : '' %>>Portfólio</a></li>
+          <li class="nav-item"><a href="/sobre" class="nav-link <%= (activePage === 'sobre') ? 'text-primary fw-bold' : 'text-muted' %>" <%= (activePage === 'sobre') ? 'aria-current="page"' : '' %>>Sobre Nós</a></li>
+          <li class="nav-item ms-lg-2">
+            <a href="#" id="loginStatusLink" class="nav-link text-muted" data-bs-toggle="modal" data-bs-target="#loginModal">
+              <i class="bi bi-person-fill me-1" aria-hidden="true"></i> Login
+            </a>
+          </li>
+          <li class="nav-item"><a href="/contato" class="btn btn-primary ms-lg-2 mt-2 mt-lg-0 <%= (activePage === 'contato') ? 'active' : '' %>">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
