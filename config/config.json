@@ -1,0 +1,14 @@
+{
+  "development": {
+    "dialect": "sqlite",
+    "storage": "./techon_dev.db" 
+  },
+  "test": {
+    "dialect": "sqlite",
+    "storage": ":memory:"
+  },
+  "production": {
+    "dialect": "sqlite",
+    "storage": "./techon_prod.db" 
+  }
+}

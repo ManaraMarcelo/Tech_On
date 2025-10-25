@@ -1,0 +1,3 @@
+Regras de negócio devem estar no controller.js 
+modulo nao pode ser controller. 
+BD usar orm 
