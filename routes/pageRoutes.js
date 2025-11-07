@@ -1,23 +1,39 @@
-import express from 'express';
-import {
-  renderIndexPage,
-  renderServicosPage,
-  renderPortfolioPage,
-  renderSobrePage,
-  renderContatoPage,
-  // processContatoForm // Descomente quando for usar
-} from '../controllers/pageController.js';
+export const renderIndexPage = (req, res) => {
+  res.render('index', { 
+    title: 'Início', 
+    activePage: 'inicio', 
+    user: req.user // Passa os dados do usuário (ou null)
+  });
+};
 
-const router = express.Router();
+export const renderServicosPage = (req, res) => {
+  res.render('servicos', { 
+    title: 'Serviços', 
+    activePage: 'servicos', 
+    user: req.user 
+  });
+};
 
-// Rotas GET para cada página
-router.get('/', renderIndexPage);
-router.get('/servicos', renderServicosPage);
-router.get('/portfolio', renderPortfolioPage);
-router.get('/sobre', renderSobrePage);
-router.get('/contato', renderContatoPage);
+export const renderPortfolioPage = (req, res) => {
+  res.render('portfolio', { 
+    title: 'Portfólio', 
+    activePage: 'portfolio', 
+    user: req.user 
+  });
+};
 
-// (Futuro) Rota POST para o formulário de contato
-// router.post('/contato/enviar', processContatoForm); 
+export const renderSobrePage = (req, res) => {
+  res.render('sobre', { 
+    title: 'Sobre Nós', 
+    activePage: 'sobre', 
+    user: req.user 
+  });
+};
 
-export default router;
+export const renderContatoPage = (req, res) => {
+  res.render('contato', { 
+    title: 'Contato', 
+    activePage: 'contato', 
+    user: req.user 
+  });
+};

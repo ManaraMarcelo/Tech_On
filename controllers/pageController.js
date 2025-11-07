@@ -1,3 +1,5 @@
+import Mensagem from '../models/Mensagem.js';
+
 // Função para renderizar a página inicial
 export const renderIndexPage = (req, res) => {
   res.render('index', { title: 'Início', activePage: 'inicio' });

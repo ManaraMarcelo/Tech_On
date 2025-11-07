@@ -31,6 +31,7 @@
                     <p class="text-muted mb-4">Preencha o formulário abaixo e nossa equipe retorna em até 24 horas.</p>
 
                     <form id="contactForm" action="https://formsubmit.co/zmarcelo2018@gmail.com" method="POST">
+                        
                         <input type="hidden" name="_next" value="https://tech-on-eight.vercel.app/contato?status=sucesso">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_subject" value="Novo Contato do Site TechON!">
@@ -120,14 +121,14 @@
                 <div id="loginError" class="alert alert-danger d-none" role="alert">
                     E-mail ou senha incorretos. Tente novamente.
                 </div>
-                <form>
+                <form action="/login" method="POST">
                     <div class="mb-3">
                         <label for="emailInput" class="form-label">Endereço de e-mail</label>
-                        <input type="email" class="form-control" id="emailInput" placeholder="seuemail@exemplo.com" required>
+                        <input type="email" class="form-control" id="emailInput" name="email" placeholder="seuemail@exemplo.com" required>
                     </div>
                     <div class="mb-3">
                         <label for="passwordInput" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="passwordInput" placeholder="Sua senha" required>
+                        <input type="password" class="form-control" id="passwordInput" name="senha" placeholder="Sua senha" required>
                     </div>
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <div class="form-check">
@@ -136,11 +137,11 @@
                         </div>
                         <a href="#" class="form-text text-decoration-none">Esqueceu sua senha?</a>
                     </div>
-                    <button type="button" id="loginButton" class="btn btn-primary w-100 btn-lg">Entrar</button>
+                    <button type="submit" id="loginButton" class="btn btn-primary w-100 btn-lg">Entrar</button>
                 </form>
                 <hr>
                 <div class="text-center">
-                    <p class="text-muted">Não tem uma conta? <a href="#" class="text-decoration-none fw-bold">Cadastre-se</a></p>
+                    <p class="text-muted">Não tem uma conta? <a href="/registrar" class="text-decoration-none fw-bold">Cadastre-se</a></p>
                 </div>
             </div>
         </div>

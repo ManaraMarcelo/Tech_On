@@ -42,53 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginModalEl = document.getElementById('loginModal');
     const loginError = document.getElementById('loginError');
 
-    // 1. Função que verifica o status do login em TODA página que carregar
-    function checkLoginStatus() {
-        if (sessionStorage.getItem('userStatus') === 'loggedIn') {
-            if(loginStatusLink) {
-                loginStatusLink.innerHTML = '<i class="bi bi-check-circle-fill me-1"></i> Connected';
-                loginStatusLink.classList.remove('text-muted');
-                loginStatusLink.classList.add('text-success', 'fw-bold');
-                loginStatusLink.removeAttribute('data-bs-toggle');
-                loginStatusLink.setAttribute('title', 'Clique para sair (Logout)');
-            }
-        } else {
-            if(loginStatusLink) {
-                loginStatusLink.innerHTML = '<i class="bi bi-person-fill me-1"></i> Login';
-                loginStatusLink.classList.add('text-muted');
-                loginStatusLink.classList.remove('text-success', 'fw-bold');
-                loginStatusLink.setAttribute('data-bs-toggle', 'modal');
-                loginStatusLink.removeAttribute('title');
-            }
-        }
-    }
 
-    // 2. Função para tentar fazer o login
-    function attemptLogin() {
-        const emailInput = document.getElementById('emailInput').value;
-        const passwordInput = document.getElementById('passwordInput').value;
-        if (emailInput === 'teste@teste' && passwordInput === 'teste') {
-            sessionStorage.setItem('userStatus', 'loggedIn');
-            const modalInstance = bootstrap.Modal.getInstance(loginModalEl);
-            modalInstance.hide();
-            checkLoginStatus();
-        } else {
-            loginError.classList.remove('d-none');
-        }
-    }
-    
-    // 3. Função para fazer logout
-    function attemptLogout() {
-        if (sessionStorage.getItem('userStatus') === 'loggedIn') {
-            sessionStorage.removeItem('userStatus');
-            location.reload();
-        }
-    }
-
-    // --- CONECTANDO AS FUNÇÕES AOS ELEMENTOS (EVENT LISTENERS) ---
-    
-    checkLoginStatus();
-    
     if (loginButton) {
         loginButton.addEventListener('click', attemptLogin);
     }

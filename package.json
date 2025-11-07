@@ -3,14 +3,18 @@
   "version": "1.0.0",
   "description": "Site da TechON Tour Virtual",
   "main": "index.js",
-  "type": "module",  
+  "type": "module",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
-    "sequelize": "^6.37.3", 
-    "sqlite3": "^5.1.7"   
+    "jsonwebtoken": "^9.0.2",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7"
   }
 }
