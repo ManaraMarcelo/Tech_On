@@ -108,10 +108,8 @@ export const redefinirSenha = async (req: Request, res: Response) => {
         if (!usuario || usuario.resetToken !== token || (usuario.resetTokenExpires && usuario.resetTokenExpires < new Date())) {
             return res.redirect('/?reset=invalid');
         }
-
-        const salt = await bcrypt.genSalt(10);
-        usuario.senha = await bcrypt.hash(novaSenha, salt);
         
+        usuario.senha = novaSenha;
         usuario.resetToken = null;
         usuario.resetTokenExpires = null;
         await usuario.save();
