@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 
 // (GET) Apenas renderiza a página de registro
 export const paginaRegistrar = (req, res) => {
-  res.render('registrar', { title: 'Registrar', activePage: 'registrar', error: null });
+  res.redirect('/');
 };
 
 // (POST) Módulo para INSERIR (registrar)
@@ -11,15 +11,18 @@ export const registrarUsuario = async (req, res) => {
   const { email, senha } = req.body;
   try {
     await Usuario.create({ email, senha });
-    res.redirect('/login'); // Redireciona para o login após o sucesso
+    res.redirect('/'); // ou /login
   } catch (error) {
-    res.render('registrar', { title: 'Registrar', activePage: 'registrar', error: 'Erro ao criar usuário. O e-mail pode já estar em uso.' });
+    console.error('Erro ao registrar:', error);
+    const referer = req.get('referer') || '/';
+    const base = referer.split('?')[0];
+    res.redirect(`${base}?register=failed`);
   }
 };
 
 // (GET) Apenas renderiza a página de login
 export const paginaLogin = (req, res) => {
-  res.render('login', { title: 'Login', activePage: 'login', error: null });
+  res.redirect('/');
 };
 
 // (POST) Módulo para VALIDAR (login)
@@ -28,7 +31,10 @@ export const validarUsuario = async (req, res) => {
   try {
     const usuario = await Usuario.findOne({ where: { email } });
     if (!usuario || !(await usuario.validarSenha(senha))) {
-      return res.render('login', { title: 'Login', activePage: 'login', error: 'E-mail ou senha incorretos.' });
+      // Redireciona de volta para a página anterior (referer) com sinal de erro
+      const referer = req.get('referer') || '/';
+      const base = referer.split('?')[0];
+      return res.redirect(`${base}?login=failed`);
     }
 
     // Sucesso! Gerar o Token (JWT)
@@ -40,16 +46,23 @@ export const validarUsuario = async (req, res) => {
 
     // Enviar o token para o navegador como um Cookie
     res.cookie('authToken', token, {
-      httpOnly: true, // O JS do front-end não pode ver o cookie
-      secure: process.env.NODE_ENV === 'production', // Usar HTTPS em produção
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
       maxAge: 3600000 // 1 hora
     });
 
-    res.redirect('/'); // Redireciona para a Home
+    // Redireciona para a Home (ou para referer sem query)
+    const referer = req.get('referer') || '/';
+    const base = referer.split('?')[0];
+    res.redirect(base);
   } catch (error) {
-    res.render('login', { title: 'Login', activePage: 'login', error: 'Erro no servidor.' });
+    console.error('Erro no login:', error);
+    const referer = req.get('referer') || '/';
+    const base = referer.split('?')[0];
+    res.redirect(`${base}?login=failed`);
   }
 };
+
 
 // (GET) Módulo para LOGOUT
 export const logoutUsuario = (req, res) => {

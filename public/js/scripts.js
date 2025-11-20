@@ -36,73 +36,37 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // --- LÓGICA DE LOGIN ---
-    const loginStatusLink = document.getElementById('loginStatusLink');
-    const loginButton = document.getElementById('loginButton');
-    const loginModalEl = document.getElementById('loginModal');
-    const loginError = document.getElementById('loginError');
+    // --- LÓGICA DE LOGIN (usando form submit do modal) ---
+const loginModalEl = document.getElementById('loginModal');
+const loginError = document.getElementById('loginError');
 
+// Se a URL contiver ?login=failed, abre o modal e mostra o erro
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('login') === 'failed' && loginModalEl && loginError) {
+    const loginModal = new bootstrap.Modal(loginModalEl);
+    loginModal.show();
+    loginError.classList.remove('d-none');
+}
 
-    if (loginButton) {
-        loginButton.addEventListener('click', attemptLogin);
-    }
-    
-    if(loginStatusLink) {
-        loginStatusLink.addEventListener('click', function(event) {
-            if (sessionStorage.getItem('userStatus') === 'loggedIn') {
-                event.preventDefault();
-                attemptLogout();
-            }
-        });
-    }
-
-    // --- LÓGICA DO FORMULÁRIO DE CONTATO (CPF) ---
-    const contactForm = document.querySelector('#contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(event) {
-            const cpfInput = document.querySelector('#cpf');
-            if (cpfInput && cpfInput.value) {
-                const feedbackEl = document.querySelector('#cpfFeedback');
-                if (!validarCPF(cpfInput.value)) {
-                    event.preventDefault(); 
-                    cpfInput.classList.add('is-invalid');
-                    cpfInput.classList.remove('is-valid');
-                    feedbackEl.style.display = 'block';
-                } else {
-                    cpfInput.classList.remove('is-invalid');
-                    cpfInput.classList.add('is-valid');
-                    feedbackEl.style.display = 'none';
-                }
-            }
-        });
-
-        const cpfInput = document.querySelector('#cpf');
-        if (cpfInput) {
-            cpfInput.addEventListener('input', function() {
-                if (this.value === '') {
-                    this.classList.remove('is-valid', 'is-invalid');
-                    document.querySelector('#cpfFeedback').style.display = 'none';
-                    return;
-                }
-                if (validarCPF(this.value)) {
-                    this.classList.remove('is-invalid');
-                    this.classList.add('is-valid');
-                    document.querySelector('#cpfFeedback').style.display = 'none';
-                } else {
-                    this.classList.add('is-invalid');
-                    this.classList.remove('is-valid');
-                }
-            });
-        }
-    }
+// Limpa alerta quando usuário abre o modal manualmente
+if (loginModalEl) {
+    loginModalEl.addEventListener('show.bs.modal', () => {
+        if (loginError) loginError.classList.add('d-none');
+    });
+}
 
     // --- LÓGICA PARA A NOTIFICAÇÃO (TOAST) ---
     const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('status') === 'sucesso') {
-        const toastEl = document.getElementById('notificationToast');
-        if (toastEl) {
-            const toast = new bootstrap.Toast(toastEl);
-            toast.show();
-        }
+    if (urlParams.get('login') === 'failed' && loginModalEl && loginError) {
+        const loginModal = new bootstrap.Modal(loginModalEl);
+        loginModal.show();
+        loginError.classList.remove('d-none');
+    }
+
+    // Opcional: limpar alerta se usuário abrir modal manualmente
+    if (loginModalEl) {
+        loginModalEl.addEventListener('show.bs.modal', () => {
+            if (loginError) loginError.classList.add('d-none');
+        });
     }
 });

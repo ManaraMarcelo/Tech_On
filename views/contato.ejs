@@ -30,7 +30,13 @@
                     <h2 class="fw-bold mb-3">Solicite seu Orçamento</h2>
                     <p class="text-muted mb-4">Preencha o formulário abaixo e nossa equipe retorna em até 24 horas.</p>
 
-                    <form id="contactForm" action="https://formsubmit.co/zmarcelo2018@gmail.com" method="POST">
+                    <% if (typeof error !== 'undefined' && error) { %>
+                        <div class="alert alert-danger" role="alert">
+                            <%= error %>
+                        </div>
+                    <% } %>
+
+                    <form id="contactForm" action="/contato" method="POST">
                         
                         <input type="hidden" name="_next" value="https://tech-on-eight.vercel.app/contato?status=sucesso">
                         <input type="hidden" name="_captcha" value="false">
