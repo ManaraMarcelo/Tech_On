@@ -25,6 +25,12 @@
             <a href="/portfolio" class="nav-link <%= (activePage === 'portfolio') ? 'text-primary fw-bold' : 'text-muted' %>" <%= (activePage === 'portfolio') ? 'aria-current="page"' : '' %>>Portfólio</a>
           </li>
           <% if (typeof user !== 'undefined' && user) { %>
+            <li class="nav-item">
+                <a href="/mensagens" class="nav-link <%= (activePage === 'mensagens') ? 'text-primary fw-bold' : 'text-muted' %>">
+                    Mensagens
+                </a>
+            </li>
+
             <li class="nav-item ms-lg-2">
               <span class="nav-link text-success fw-bold">
                 <i class="bi bi-check-circle-fill me-1"></i> Connected

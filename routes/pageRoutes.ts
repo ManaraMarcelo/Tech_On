@@ -6,18 +6,18 @@ import {
   renderSobrePage,
   renderContatoPage,
   processarFormContato,
-  listarMensagens          
+  listarMensagens
 } from '../controllers/pageController.js';
+
+import { exigirAdmin } from '../middlewares/authMiddleware.js';
 
 const router = express.Router();
 
-// Rotas GET para cada página
 router.get('/', renderIndexPage);
 router.get('/servicos', renderServicosPage);
 router.get('/portfolio', renderPortfolioPage);
 router.get('/sobre', renderSobrePage);
-
-// Contato
+router.get('/mensagens', exigirAdmin, listarMensagens);
 router.get('/contato', renderContatoPage);
 router.post('/contato', processarFormContato);
 

@@ -1,0 +1,98 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+
+<main role="main" class="flex-grow-1">
+    <section class="bg-light py-5 text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Painel de Mensagens</h1>
+            <p class="lead text-muted">Gerencie as solicitações de orçamento recebidas.</p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            
+            <% if (mensagens.length === 0) { %>
+                <div class="alert alert-info text-center py-5" role="alert">
+                    <i class="bi bi-inbox fs-1 d-block mb-3"></i>
+                    <h4 class="alert-heading">Nenhuma mensagem encontrada!</h4>
+                    <p>Quando os clientes preencherem o formulário de contato, as mensagens aparecerão aqui.</p>
+                </div>
+            <% } else { %>
+            
+                <div class="table-responsive shadow-sm rounded">
+                    <table class="table table-hover align-middle mb-0 bg-white">
+                        <thead class="bg-light">
+                            <tr>
+                                <th scope="col" class="ps-4">Data</th>
+                                <th scope="col">Nome / CPF</th>
+                                <th scope="col">Contato</th>
+                                <th scope="col">Serviço</th>
+                                <th scope="col">Mensagem</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% mensagens.forEach(msg => { %>
+                                <tr>
+                                    <td class="ps-4 text-nowrap text-secondary">
+                                        <%= new Date(msg.createdAt).toLocaleDateString('pt-BR') %> <br>
+                                        <small><%= new Date(msg.createdAt).toLocaleTimeString('pt-BR', {hour: '2-digit', minute:'2-digit'}) %></small>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="ms-2">
+                                                <p class="fw-bold mb-1"><%= msg.nome %></p>
+                                                <p class="text-muted mb-0 small"><%= msg.cpf %></p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="fw-normal mb-1"><%= msg.email %></p>
+                                        <p class="text-muted mb-0 small"><%= msg.telefone %></p>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-primary rounded-pill d-inline"><%= msg.servicoInteresse || 'Geral' %></span>
+                                    </td>
+                                    <td class="text-wrap" style="min-width: 250px;">
+                                        <%= msg.mensagem %>
+                                    </td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-muted text-end mt-3 small">Total de registros: <%= mensagens.length %></p>
+            <% } %>
+
+        </div>
+    </section>
+</main>
+
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold" id="loginModalLabel">Acessar sua Conta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="loginError" class="alert alert-danger d-none" role="alert">
+                    E-mail ou senha incorretos.
+                </div>
+                <form action="/login" method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">E-mail</label>
+                        <input type="email" class="form-control" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Senha</label>
+                        <input type="password" class="form-control" name="senha" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

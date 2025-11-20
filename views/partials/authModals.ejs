@@ -1,0 +1,126 @@
+<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">Acessar sua Conta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <% if (typeof activePage !== 'undefined' && activePage === 'login_error') { %>
+                    <div class="alert alert-danger">E-mail ou senha incorretos.</div>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', () => {
+                            new bootstrap.Modal(document.getElementById('loginModal')).show();
+                        });
+                    </script>
+                <% } %>
+
+                <form action="/login" method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">E-mail</label>
+                        <input type="email" class="form-control" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Senha</label>
+                        <input type="password" class="form-control" name="senha" required>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <a href="#" class="text-decoration-none small" data-bs-toggle="modal" data-bs-target="#forgotModal">Esqueceu sua senha?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Entrar</button>
+                </form>
+                <hr>
+                <div class="text-center">
+                    <p class="text-muted">Não tem conta? 
+                        <a href="#" class="text-decoration-none fw-bold" data-bs-toggle="modal" data-bs-target="#registerModal">Cadastre-se</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">Criar Nova Conta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/registrar" method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">E-mail</label>
+                        <input type="email" class="form-control" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Senha</label>
+                        <input type="password" class="form-control" name="senha" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Confirmar Senha</label>
+                        <input type="password" class="form-control" name="confirmaSenha" required>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Cadastrar</button>
+                </form>
+                <hr>
+                <div class="text-center">
+                    <p class="text-muted">Já tem conta? 
+                        <a href="#" class="text-decoration-none fw-bold" data-bs-toggle="modal" data-bs-target="#loginModal">Fazer Login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="forgotModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">Recuperar Senha</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-muted small">Digite seu e-mail para receber o código de recuperação.</p>
+                <form action="/recuperar-senha" method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">E-mail Cadastrado</label>
+                        <input type="email" class="form-control" name="email" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Enviar Código</button>
+                </form>
+                <div class="text-center mt-3">
+                    <a href="#" class="text-decoration-none small" data-bs-toggle="modal" data-bs-target="#loginModal">Voltar para Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="resetModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">Definir Nova Senha</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-muted small">Verifique seu terminal e digite o código abaixo.</p>
+                <form action="/redefinir-senha" method="POST">
+                    <input type="hidden" id="resetEmailHidden" name="email" value=""> 
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Código de Recuperação</label>
+                        <input type="text" class="form-control" name="token" placeholder="Ex: 123456" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Nova Senha</label>
+                        <input type="password" class="form-control" name="novaSenha" required>
+                    </div>
+                    <button type="submit" class="btn btn-warning w-100">Alterar Senha</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
