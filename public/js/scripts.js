@@ -157,4 +157,53 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
+
+    // --- 6. LÓGICA DE CADASTRO (SUCESSO E ERRO) ---
+    const registerParam = urlParams.get('register');
+
+    // Cenario 1: Sucesso
+    if (registerParam === 'success') {
+        // Mostra o Toast Verde
+        const successToastEl = document.getElementById('registerSuccessToast');
+        if (successToastEl) {
+            const toast = new bootstrap.Toast(successToastEl);
+            toast.show();
+        }
+        // Abre o modal de Login automaticamente para facilitar
+        if (loginModalEl) {
+            const loginModal = new bootstrap.Modal(loginModalEl);
+            loginModal.show();
+        }
+        // Limpa a URL
+        window.history.replaceState({}, document.title, "/");
+    }
+
+    // Cenario 2: Erro (Senhas não conferem ou Email já existe)
+    if (registerParam === 'failed' || registerParam === 'error_password') {
+        const registerModalEl = document.getElementById('registerModal');
+        const registerErrorEl = document.getElementById('registerError');
+        
+        if (registerModalEl && registerErrorEl) {
+            // Define a mensagem correta
+            if (registerParam === 'error_password') {
+                registerErrorEl.innerText = "As senhas não conferem.";
+            } else {
+                registerErrorEl.innerText = "Erro: E-mail já cadastrado ou inválido.";
+            }
+            
+            // Abre o modal e mostra o erro
+            const registerModal = new bootstrap.Modal(registerModalEl);
+            registerModal.show();
+            registerErrorEl.classList.remove('d-none');
+        }
+    }
+    
+    // Limpa o erro ao abrir o modal manualmente
+    const registerModalEl = document.getElementById('registerModal');
+    if (registerModalEl) {
+        registerModalEl.addEventListener('show.bs.modal', () => {
+            const errDiv = document.getElementById('registerError');
+            if(errDiv) errDiv.classList.add('d-none');
+        });
+    }
 });
