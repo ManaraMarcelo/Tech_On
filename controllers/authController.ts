@@ -18,7 +18,7 @@ export const registrarUsuario = async (req: Request, res: Response) => {
   }
 
   try {
-    await Usuario.create({ email, senha } as any); // 'as any' ajuda a contornar validações estritas na criação rápida
+    await Usuario.create({ email, senha } as any); 
     res.redirect('/?register=success'); 
   } catch (error) {
     console.error('Erro ao registrar:', error);
@@ -37,11 +37,12 @@ export const validarUsuario = async (req: Request, res: Response) => {
   try {
     const usuario = await Usuario.findOne({ where: { email } });
     
+    // Se usuário não existe OU senha inválida
     if (!usuario || !(await usuario.validarSenha(senha))) {
-      return res.render('index', { title: 'Início', activePage: 'login_error', user: null });
+      // MUDANÇA IMPORTANTE: Redireciona com parâmetro para o script.js abrir o modal
+      return res.redirect('/?login=failed');
     }
 
-    // Verifica se a chave secreta existe
     if (!process.env.JWT_SECRET) {
         throw new Error("JWT_SECRET não definida no .env");
     }
@@ -61,7 +62,8 @@ export const validarUsuario = async (req: Request, res: Response) => {
     res.redirect('/');
   } catch (error) {
     console.error('Erro no login:', error);
-    res.redirect('/');
+    // MUDANÇA: Redireciona com erro genérico se o servidor falhar
+    res.redirect('/?login=error');
   }
 };
 
@@ -109,6 +111,7 @@ export const redefinirSenha = async (req: Request, res: Response) => {
             return res.redirect('/?reset=invalid');
         }
         
+        // Atribuição direta para acionar o hook beforeUpdate do Model
         usuario.senha = novaSenha;
         usuario.resetToken = null;
         usuario.resetTokenExpires = null;

@@ -8,7 +8,7 @@ interface Config {
         dialect: 'sqlite' | 'mysql' | 'postgres';
         storage?: string;
     }
-}
+} 
 
 // Lê o config.json
 const configPath = resolve('config', 'config.json');
