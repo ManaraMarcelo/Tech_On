@@ -1,6 +1,3 @@
-// ===================================================
-// FUNÇÃO DE VALIDAÇÃO DE CPF
-// ===================================================
 function validarCPF(cpf) {
     cpf = cpf.replace(/[^\d]+/g, '');
     if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) { return false; }
@@ -17,9 +14,6 @@ function validarCPF(cpf) {
     return true;
 }
 
-// ===================================================
-// LÓGICA PRINCIPAL (EXECUTADA QUANDO A PÁGINA CARREGA)
-// ===================================================
 document.addEventListener('DOMContentLoaded', function() {
     
     // --- 1. MODAL DE BOAS-VINDAS (PRIMEIRA VISITA) ---

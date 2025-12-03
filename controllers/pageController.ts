@@ -1,9 +1,8 @@
 import { Request, Response } from 'express';
 import Mensagem from '../models/Mensagem.js';
 
-// Criamos um tipo personalizado que estende o Request padrão
 interface AuthRequest extends Request {
-    user?: any; // Define que pode existir uma propriedade 'user'
+    user?: any; 
 }
 
 export const renderIndexPage = (req: AuthRequest, res: Response) => {
@@ -80,17 +79,15 @@ export const processarFormContato = async (req: AuthRequest, res: Response) => {
 // --- FUNÇÃO PARA LISTAR AS MENSAGENS (DASHBOARD) ---
 export const listarMensagens = async (req: AuthRequest, res: Response) => {
   try {
-    // Busca todas as mensagens no banco, ordenando da mais nova para a mais antiga
     const mensagens = await Mensagem.findAll({
       order: [['createdAt', 'DESC']]
     });
 
-    // Renderiza a view 'mensagens.ejs' enviando os dados
     res.render('mensagens', {
       title: 'Mensagens Recebidas',
       activePage: 'mensagens',
-      user: req.user, // Necessário para verificar se está logado
-      mensagens       // A lista de dados que pegamos do banco
+      user: req.user,
+      mensagens      
     });
   } catch (error) {
     console.error('Erro ao carregar mensagens:', error);

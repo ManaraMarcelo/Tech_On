@@ -39,7 +39,6 @@ export const validarUsuario = async (req: Request, res: Response) => {
     
     // Se usuário não existe OU senha inválida
     if (!usuario || !(await usuario.validarSenha(senha))) {
-      // MUDANÇA IMPORTANTE: Redireciona com parâmetro para o script.js abrir o modal
       return res.redirect('/?login=failed');
     }
 
@@ -62,7 +61,6 @@ export const validarUsuario = async (req: Request, res: Response) => {
     res.redirect('/');
   } catch (error) {
     console.error('Erro no login:', error);
-    // MUDANÇA: Redireciona com erro genérico se o servidor falhar
     res.redirect('/?login=error');
   }
 };
@@ -89,7 +87,6 @@ export const solicitarRecuperacao = async (req: Request, res: Response) => {
             usuario.resetTokenExpires = expires;
             await usuario.save();
 
-            // Simulação de envio (mostra no terminal)
             console.log(`>>> CÓDIGO DE RECUPERAÇÃO PARA ${email}: ${token} <<<`);
         }
         res.redirect(`/?reset=codeSent&email=${email}`);
@@ -111,7 +108,6 @@ export const redefinirSenha = async (req: Request, res: Response) => {
             return res.redirect('/?reset=invalid');
         }
         
-        // Atribuição direta para acionar o hook beforeUpdate do Model
         usuario.senha = novaSenha;
         usuario.resetToken = null;
         usuario.resetTokenExpires = null;

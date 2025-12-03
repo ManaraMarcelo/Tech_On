@@ -2,7 +2,6 @@ import { DataTypes, Model, Optional } from 'sequelize';
 import sequelize from '../config/database.js';
 import bcrypt from 'bcrypt';
 
-// 1. Interface dos atributos (O que o usuário tem)
 interface UsuarioAttributes {
     id: number;
     email: string;
@@ -13,10 +12,8 @@ interface UsuarioAttributes {
     updatedAt?: Date;
 }
 
-// 2. Interface de criação (O que é opcional na hora de criar)
 interface UsuarioCreationAttributes extends Optional<UsuarioAttributes, 'id'> {}
 
-// 3. Definição da Classe do Model
 class Usuario extends Model<UsuarioAttributes, UsuarioCreationAttributes> implements UsuarioAttributes {
     public id!: number;
     public email!: string;
@@ -27,13 +24,11 @@ class Usuario extends Model<UsuarioAttributes, UsuarioCreationAttributes> implem
     public readonly createdAt!: Date;
     public readonly updatedAt!: Date;
 
-    // Método de instância para validar senha
     public async validarSenha(senhaEnviada: string): Promise<boolean> {
         return await bcrypt.compare(senhaEnviada, this.senha);
     }
 }
 
-// 4. Inicialização do Modelo
 Usuario.init({
     id: {
         type: DataTypes.INTEGER,
@@ -63,9 +58,6 @@ Usuario.init({
     tableName: 'Usuarios',
 });
 
-// 5. Hooks (Gatilhos) de Criptografia
-
-// Antes de CRIAR (Registro)
 Usuario.beforeCreate(async (usuario: Usuario) => {
     const salt = await bcrypt.genSalt(10);
     usuario.senha = await bcrypt.hash(usuario.senha, salt);
@@ -73,7 +65,6 @@ Usuario.beforeCreate(async (usuario: Usuario) => {
 
 // Antes de ATUALIZAR (Redefinir Senha)
 Usuario.beforeUpdate(async (usuario: Usuario) => {
-    // Verifica se o campo 'senha' foi alterado
     if (usuario.changed('senha')) {
         const salt = await bcrypt.genSalt(10);
         usuario.senha = await bcrypt.hash(usuario.senha, salt);

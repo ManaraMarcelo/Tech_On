@@ -1,23 +1,20 @@
 import { DataTypes, Model, Optional } from 'sequelize';
 import sequelize from '../config/database.js';
 
-// 1. Interface com todos os campos
 interface MensagemAttributes {
     id: number;
     nome: string;
     email: string;
     telefone: string;
     cpf: string;
-    servicoInteresse?: string; // Opcional
-    mensagem?: string;        // Opcional
+    servicoInteresse?: string; 
+    mensagem?: string;        
     createdAt?: Date;
     updatedAt?: Date;
 }
 
-// 2. Interface para criação (ID é opcional pois é auto-incremento)
 interface MensagemCreationAttributes extends Optional<MensagemAttributes, 'id'> {}
 
-// 3. Definição da Classe do Model
 class Mensagem extends Model<MensagemAttributes, MensagemCreationAttributes> implements MensagemAttributes {
     public id!: number;
     public nome!: string;
@@ -65,7 +62,7 @@ Mensagem.init({
         allowNull: true,
     },
 }, {
-    sequelize, // Passamos a conexão
+    sequelize, 
     tableName: 'Mensagens',
 });
 

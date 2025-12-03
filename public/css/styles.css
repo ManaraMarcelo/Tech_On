@@ -40,14 +40,10 @@
     color: #1a1a1a;
 }
 
-/* 2. Classes de Helper (Complementos ao Bootstrap) */
-/* ==================================================== */
 .text-highlight {
-    /* Cor de destaque para o texto no hero-section */
     color: #a7c7ff; 
 }
 
-/* Efeito de hover para o portfólio */
 .hover-opacity-100 {
     transition: opacity 0.3s ease;
 }
@@ -56,30 +52,24 @@
     opacity: 1 !important;
 }
 
-/* Garante que a transição seja suave */
 .transition-opacity {
     transition: opacity 0.3s ease;
 }
 
-/* 3. Ajustes no Header (Opcional, mas recomendado) */
-/* =================================================== */
 .header {
     position: sticky;
     top: 0;
-    z-index: 1030; /* Padrão do Bootstrap para headers fixos */
+    z-index: 1030;
 }
 
 .navbar-nav .btn {
     padding: 0.5rem 1rem;
 }
 
-
-/* 4. Estilos do Rodapé (Footer) - CORREÇÃO */
-/* =================================================== */
 .footer a.text-white-50 {
     transition: color 0.2s ease-in-out;
 }
 
 .footer a.text-white-50:hover {
-    color: #ffffff !important; /* Garante que o link fique branco ao passar o mouse */
+    color: #ffffff !important; 
 }

@@ -33,7 +33,7 @@ cd Tech_On
 npm install
 ````
 
-3. Configure as Variáveis de Ambiente: Crie um arquivo chamado .env na raiz do projeto e adicione uma chave secreta para o JWT:
+3. Configure as Variáveis de Ambiente: Crie um arquivo chamado `.env` na raiz do projeto e adicione uma chave secreta para o JWT:
 ```sh
 JWT_SECRET=sua_chave_secreta_super_segura_aqui
 ```
@@ -48,8 +48,8 @@ npm run dev
 ```
 Acesse em: http://localhost:3000
 
-Opção 2: Rodar com Docker (Recomendado para Entrega)  
-Para rodar a aplicação "buildada" e isolada em um container:
+Opção 2: Rodar com Docker   
+- Para rodar a aplicação "buildada" e isolada em um container:
 
 Construir a imagem:
 ```sh
@@ -99,7 +99,7 @@ Plaintext
 Existe uma rota protegida /mensagens que exibe os contatos recebidos pelo formulário.
 
 - Segurança: Apenas usuários com e-mails autorizados (definidos no Middleware) podem acessar.
-- Teste: O usuário teste@teste (se criado) ou zmarcelo2018@gmail.com possuem permissão de admin. Outros usuários serão redirecionados para a Home com um alerta de "Acesso Negado".
+- Teste: O usuário `teste@teste.com` (crie-o ou altere a senha se já existente) ou `admin@techon.com` possuem permissão de admin. Outros usuários serão redirecionados para a Home com um alerta de "Acesso Negado".
 
 # 🧪 Testes Automatizados (Jest)
 O projeto conta com testes unitários cobrindo Controllers de Páginas e Autenticação.

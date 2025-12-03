@@ -1,14 +1,9 @@
-// 1. IMPORTAR AS FERRAMENTAS DO JEST
 import { jest, describe, test, expect, beforeEach, afterEach } from '@jest/globals';
 import { Request, Response } from 'express';
 
-// 2. CRIAR AS FUNÇÕES MOCKADAS ANTES DE IMPORTAR O CONTROLLER
-// Isso garante que temos controle total sobre elas
 const mockCreate = jest.fn();
 const mockFindAll = jest.fn();
 
-// 3. MOCKAR O MODEL USANDO "FACTORY"
-// Isso força o Jest a usar nossas funções acima no lugar do Model real
 jest.unstable_mockModule('../models/Mensagem.js', () => ({
   default: {
     create: mockCreate,
@@ -16,8 +11,6 @@ jest.unstable_mockModule('../models/Mensagem.js', () => ({
   },
 }));
 
-// 4. IMPORTAR O CONTROLLER DEPOIS DE MOCKAR (Dynamic Import)
-// Em testes ESM, é mais seguro importar o módulo que será testado depois dos mocks
 const { 
   renderIndexPage, 
   renderContatoPage, 
@@ -35,9 +28,9 @@ describe('PageController', () => {
   const originalConsoleError = console.error;
 
   beforeEach(() => {
-    console.error = jest.fn(); // Silencia logs de erro
-    mockCreate.mockReset();   // Limpa o mock create antes de cada teste
-    mockFindAll.mockReset();  // Limpa o mock findAll antes de cada teste
+    console.error = jest.fn(); 
+    mockCreate.mockReset();   
+    mockFindAll.mockReset();  
 
     req = {
       body: {},
@@ -58,7 +51,6 @@ describe('PageController', () => {
   });
 
   // --- Testes de Renderização (GET) ---
-  // (Estes já estavam passando, mantivemos iguais)
   
   test('Deve renderizar a página inicial (Index)', () => {
     renderIndexPage(req as Request, res as Response);

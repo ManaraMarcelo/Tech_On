@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 
 const emailsAutorizados = [
-    'teste@teste', 
+    'teste@teste.com', 
     'zmarcelo2018@gmail.com',
     'admin@techon.com'
 ];

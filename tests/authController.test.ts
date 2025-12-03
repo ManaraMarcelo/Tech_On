@@ -1,11 +1,9 @@
 import { jest, describe, test, expect, beforeEach, afterEach } from '@jest/globals';
 import { Request, Response } from 'express';
 
-// 1. PREPARAR OS MOCKS
 const mockCreate = jest.fn();
 const mockFindOne = jest.fn();
 
-// Mock do objeto usuário
 const mockUsuarioInstance = {
   id: 1,
   email: 'teste@teste.com',
@@ -19,7 +17,6 @@ const mockJwtSign = jest.fn();
 const mockBcryptHash = jest.fn();
 const mockBcryptGenSalt = jest.fn();
 
-// 2. APLICAR OS MOCKS
 jest.unstable_mockModule('../models/Usuario.js', () => ({
   default: {
     create: mockCreate,
@@ -40,8 +37,8 @@ jest.unstable_mockModule('bcrypt', () => ({
 
 // 3. IMPORTAR O CONTROLLER
 const { 
-  paginaRegistrar,      // NOVO
-  paginaLogin,          // NOVO
+  paginaRegistrar,      
+  paginaLogin,        
   registrarUsuario, 
   validarUsuario, 
   logoutUsuario,
@@ -77,7 +74,7 @@ describe('AuthController', () => {
     console.error = originalConsoleError;
   });
 
-  // --- NOVOS TESTES: RENDERIZAÇÃO (GET) ---
+  // --- RENDERIZAÇÃO (GET) ---
 
   test('Deve renderizar a página de registro', () => {
     paginaRegistrar(req as Request, res as Response);
@@ -191,7 +188,7 @@ describe('AuthController', () => {
       expect(res.redirect).toHaveBeenCalledWith(expect.stringContaining('?reset=codeSent'));
   });
 
-  // NOVO: Teste para quando o usuário NÃO existe na recuperação
+  // Teste para quando o usuário NÃO existe na recuperação
   test('Deve simular envio mesmo se usuário não existir (Segurança)', async () => {
       req.body = { email: 'naoexiste@teste.com' };
       (mockFindOne as unknown as jest.Mock).mockResolvedValue(null);
@@ -201,7 +198,7 @@ describe('AuthController', () => {
       expect(res.redirect).toHaveBeenCalledWith(expect.stringContaining('?reset=codeSent'));
   });
 
-  // NOVO: Teste de erro no banco durante solicitação
+  // Teste de erro no banco durante solicitação
   test('Deve redirecionar para home se der erro no banco (Solicitação)', async () => {
       req.body = { email: 'erro@teste.com' };
       (mockFindOne as unknown as jest.Mock).mockRejectedValue(new Error('DB Error'));
@@ -219,7 +216,7 @@ describe('AuthController', () => {
       expect(res.redirect).toHaveBeenCalledWith('/?reset=success');
   });
   
-  // NOVO: Teste para token inválido
+  // Teste para token inválido
   test('Deve falhar se token for inválido', async () => {
       req.body = { email: 'teste@teste.com', token: 'ERRADO', novaSenha: 'nova' };
       const userReset = { ...mockUsuarioInstance, resetToken: '123456' };
@@ -229,7 +226,7 @@ describe('AuthController', () => {
       expect(res.redirect).toHaveBeenCalledWith('/?reset=invalid');
   });
 
-  // NOVO: Teste de erro no banco durante redefinição
+  // Teste de erro no banco durante redefinição
   test('Deve redirecionar com erro se falhar no banco (Redefinição)', async () => {
       req.body = { email: 'teste@teste.com', token: '123456', novaSenha: 'nova' };
       (mockFindOne as unknown as jest.Mock).mockRejectedValue(new Error('DB Error'));
