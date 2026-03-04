@@ -1,129 +1,181 @@
-# 📸 TechON - Plataforma de Tours Virtuais
+# TechON: Professional Virtual Tours & Matterport Management Platform
 
-`Desenvolvido por: Marcelo Manara e Lucas Vieira`
+`Developed by: Marcelo Manara & Lucas Vieira`
 
-Bem-vindo ao repositório da TechON, uma aplicação web desenvolvida para exibir e gerenciar serviços de tours virtuais 360°, fotografia imobiliária e projetos Matterport.
+Welcome to the TechON repository, a robust web application designed to showcase and manage 360° virtual tours, real estate photography, and Matterport projects. 
 
-Este projeto foi desenvolvido utilizando arquitetura MVC (Model-View-Controller), TypeScript e Node.js, com foco em práticas modernas de desenvolvimento, segurança e containerização.
+This project was built using **MVC (Model-View-Controller)** architecture with **TypeScript** and **Node.js**, focusing on modern development practices, high security standards, and containerization.
 
-# 🚀 Tecnologias Utilizadas
-- Back-end: Node.js, Express (TypeScript)
-- Front-end: EJS (View Engine), Bootstrap 5
-- Banco de Dados: SQLite (via Sequelize ORM)
-- Segurança: BCrypt (Hash de senhas), JWT (Autenticação via Cookies)
-- Testes: Jest (Cobertura de código > 90%)
-- Containerização: Docker
+---
 
-# ⚙️ Pré-requisitos
-Antes de começar, certifique-se de ter instalado:
+### 💡 Project Overview
 
-- Node.js (v18 ou superior)  
-- Docker (Opcional, para rodar via container)
+**The Problem:** Real estate and photography businesses often lack an organized, secure, and professional way to present complex 360° digital assets to clients while managing lead inquiries and administrative access.
 
-# 🛠️ Configuração Inicial
+**The Solution:** A centralized management platform. TechON provides a sleek frontend for clients and a secure administrative backend. It implements industrial-strength authentication (JWT via HttpOnly Cookies) and a dedicated lead management system, all wrapped in a scalable Dockerized environment.
 
-1. Clone o repositório:
+
+
+**Technical Challenges:**
+- **Secure State Management:** Implementing JWT authentication stored in **HttpOnly Cookies** to mitigate XSS (Cross-Site Scripting) attacks, a significant upgrade over standard LocalStorage methods.
+- **Robust Testing:** Achieving **100% code coverage** on critical controllers using **Jest**, ensuring the business logic and authentication flows are bug-free before deployment.
+- **Environment Parity:** Using **Docker** to ensure the application runs identically across development, testing, and production environments, eliminating "it works on my machine" issues.
+
+---
+
+## 📌 Table of Contents
+1. [Technologies Used](#-technologies-used)
+2. [Prerequisites](#-prerequisites)
+3. [Initial Setup](#-initial-setup)
+4. [Running the Project](#-running-the-project)
+5. [Authentication & Security Features](#-authentication--security-features)
+6. [Automated Testing (Jest)](#-automated-testing-jest)
+7. [Project Structure](#-project-structure)
+8. [Contact](#-contact)
+
+---
+
+## 🚀 Technologies Used
+- **Backend:** Node.js, Express (TypeScript)
+- **Frontend:** EJS (View Engine), Bootstrap 5
+- **Database:** SQLite (via Sequelize ORM)
+- **Security:** BCrypt (Password Hashing), JWT (Authentication via Cookies)
+- **Testing:** Jest (Code coverage > 90%)
+- **Containerization:** Docker
+
+---
+
+## ⚙️ Prerequisites
+Before starting, ensure you have installed:
+- **Node.js** (v18 or higher)
+- **Docker** (Optional, for containerized execution)
+
+---
+
+## 🛠️ Initial Setup
+
+1. **Clone the repository:**
 ```sh
-git clone https://github.com/ManaraMarcelo/Tech_On.git
-cd Tech_On
-````
+git clone [https://github.com/ManaraMarcelo/techon-virtual-tours-platform.git](https://github.com/ManaraMarcelo/techon-virtual-tours-platform.git)
+cd techon-virtual-tours-platform
 
-2. Instale as dependências:
-```sh
-npm install
-````
-
-3. Configure as Variáveis de Ambiente: Crie um arquivo chamado `.env` na raiz do projeto e adicione uma chave secreta para o JWT:
-```sh
-JWT_SECRET=sua_chave_secreta_super_segura_aqui
 ```
 
-# ▶️ Como Rodar o Projeto
-Opção 1: Rodar Localmente (Desenvolvimento)
+2. **Install dependencies:**
 
-Para rodar o projeto diretamente na sua máquina e ver as alterações em tempo real:
+```sh
+npm install
+
+```
+
+3. **Configure Environment Variables:** Create a `.env` file in the root directory and add your JWT secret:
+
+```env
+JWT_SECRET=your_super_secure_secret_here
+
+```
+
+---
+
+## ▶️ Running the Project
+
+### Option 1: Local Development
+
+Run the project with live-reload:
 
 ```sh
 npm run dev
+
 ```
-Acesse em: http://localhost:3000
 
-Opção 2: Rodar com Docker   
-- Para rodar a aplicação "buildada" e isolada em um container:
+Access at: `http://localhost:3000`
 
-Construir a imagem:
+### Option 2: Docker Execution
+
+To run the built application in an isolated container:
+
+1. **Build the image:**
+
 ```sh
 docker build -t techon-app .
+
 ```
 
-Rodar o container:
+2. **Run the container:**
+
 ```sh
 docker run -p 3000:3000 techon-app
-````
 
-Acesse em: http://localhost:3000
+```
 
-# 🔐 Funcionalidades de Autenticação e Segurança
-O sistema possui um fluxo completo de autenticação. Abaixo, os detalhes de funcionamento:
+Access at: `http://localhost:3000`
 
-1. Cadastro e Login
+---
 
-- As senhas são criptografadas no banco de dados utilizando BCrypt.
-- O login gera um Token JWT que é armazenado em um cookie seguro (httpOnly), impedindo acesso via scripts do front-end.
+## 🔐 Authentication & Security Features
 
-2. Recuperação de Senha (Simulação no Terminal) ⚠️
+The system implements a complete professional authentication flow:
 
-- Como este é um projeto acadêmico e não está conectado a um servidor SMTP real (como Gmail ou SendGrid), o envio do código de recuperação é simulado.
-- Como testar a recuperação de senha:
-- Acesse a área de Login e clique em "Esqueceu sua senha?".
-- Digite o e-mail de um usuário cadastrado e clique em "Enviar Código".
-- IMPORTANTE: O código NÃO chegará no seu e-mail.
-- Vá até o TERMINAL onde o servidor está rodando (VS Code ou Docker logs).
+### 1. Registration & Login
 
-Você verá uma mensagem destacada assim:
-```sh
-Plaintext
+* Passwords are encrypted using **BCrypt** before database storage.
+* Login generates a **JWT Token** stored in a secure **httpOnly cookie**, preventing access via frontend scripts.
+
+### 2. Password Recovery (Terminal Simulation) ⚠️
+
+As this is an academic project not connected to an SMTP server (like SendGrid), the recovery code is simulated:
+
+1. Click "Forgot password?" on the Login screen.
+2. Enter a registered email.
+3. **Check your Terminal/Docker logs** to find the recovery code:
+
+```text
 ==================================================
->>> RECUPERAÇÃO DE SENHA <<<
->>> Usuário: teste@teste.com
->>> CÓDIGO: 123456
+>>> PASSWORD RECOVERY <<<
+>>> User: test@test.com
+>>> CODE: 123456
 ==================================================
-````
 
-- Copie este código (123456), volte ao navegador e insira no modal que se abriu automaticamente.
+```
 
-- Defina sua nova senha.
+4. Enter the code in the browser modal to reset your password.
 
-3. Área Administrativa (Mensagens)
+### 3. Administrative Area
 
-Existe uma rota protegida /mensagens que exibe os contatos recebidos pelo formulário.
+The `/messages` route is protected and displays form inquiries.
 
-- Segurança: Apenas usuários com e-mails autorizados (definidos no Middleware) podem acessar.
-- Teste: O usuário `teste@teste.com` (crie-o ou altere a senha se já existente) ou `admin@techon.com` possuem permissão de admin. Outros usuários serão redirecionados para a Home com um alerta de "Acesso Negado".
+* **Access Control:** Only authorized admin emails (defined in Middleware) can access this area. Unauthorized users are redirected with an "Access Denied" alert.
 
-# 🧪 Testes Automatizados (Jest)
-O projeto conta com testes unitários cobrindo Controllers de Páginas e Autenticação.
+---
 
-Para rodar os testes e ver o relatório de cobertura:
+## 🧪 Automated Testing (Jest)
+
+The project features comprehensive unit tests for Page and Auth Controllers.
+
+To run tests and generate a coverage report:
+
 ```sh
 npm run test:coverage
+
 ```
-A cobertura atual é de 100% nos arquivos testados.
 
-# 📂 Estrutura do Projeto
+*Current status: 100% coverage on core logic files.*
 
-- `config/`: Configuração do Banco de Dados (Sequelize).
+---
 
-- `controllers`/: Lógica de negócio (Auth e Páginas).
+## 📂 Project Structure
 
-- `models/`: Modelos do Banco de Dados (Usuario, Mensagem).
+* `config/`: Database configuration (Sequelize).
+* `controllers/`: Core business logic (Auth and Pages).
+* `models/`: Database models (User, Message).
+* `middlewares/`: Token verification and admin permissions.
+* `routes/`: API route definitions.
+* `views/`: EJS files (Dynamic HTML) and Partials.
+* `public/`: Static assets (CSS, Images, Client-side JS).
+* `tests/`: Unit tests with Jest.
 
-- `middlewares/`: Verificação de tokens e permissões de admin.
+---
 
-- `routes/`: Definição das rotas da API.
+## 🔗 Contact
 
-- `views/`: Arquivos EJS (HTML dinâmico) e Partials (Header, Navbar, Footer).
-
-- `public/`: Arquivos estáticos (CSS, Imagens, Scripts JS do front-end).
-
-- `tests/`: Testes unitários com Jest.
+**Marcelo Manara** [LinkedIn](https://www.linkedin.com/in/marcelo-manara) | [Portfolio](https://portifolio-peach-beta.vercel.app/)
